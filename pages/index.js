@@ -1,4 +1,6 @@
-import { FaFacebookMessenger } from "react-icons/fa";
+import Link from "next/link";
+
+import { FaFacebookMessenger, FaArrowRight } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -19,8 +21,16 @@ export default function Home() {
           elit vehicula, mattis magna ut, porttitor turpis.
         </p>
         <div className="text-slate-300 italic">
-            Nullam dignissim magna vitae sollicitudin facilisis.
+          Nullam dignissim magna vitae sollicitudin facilisis.
+        </div>
+      </div>
+      <div className="bg-cyan-700 mx-auto font-medium cursor-pointer shadow-md text-white p-4 rounded-md transition ease-in-out duration-0 hover:duration-300 hover:scale-105 hover:shadow-lg">
+        <Link href="/home">
+          <div className="flex flex-row justify-between items-center text-lg gap-4">
+            <div>Home</div>
+            <FaArrowRight className="text-xl" />
           </div>
+        </Link>
       </div>
     </div>
   );
