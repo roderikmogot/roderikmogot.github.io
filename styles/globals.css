@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('http://fonts.cdnfonts.com/css/avenir');
+
+* {
+    font-family: 'Avenir', sans-serif;
+}
+
+body {
+    @apply bg-gray-100
+}
