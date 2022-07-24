@@ -1,4 +1,5 @@
 import Roderik from "../public/roderik.png";
+import BOC from "../public/boc.jpeg"
 import Image from "next/image";
 
 import { FaAngleDown, FaArrowDown } from "react-icons/fa";
@@ -45,7 +46,7 @@ export default function Home() {
       {/* About */}
       <section className="w-auto mx-4 py-4 items-center bg-black text-white lg:w-auto lg:flex lg:flex-row lg:justify-between lg:px-20 lg:py-8 lg:mx-12 lg:gap-12">
         <div className="p-4 leading-relaxed italic text-slate-100 lg:text-xl lg:max-w-2xl lg:leading-8">
-          <div className="not-italic font-extrabold text-transparent text-2xl bg-clip-text bg-gradient-to-r from-blue-700 to-red-400 lg:text-8xl">
+          <div className="not-italic font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-blue-700 to-red-400 lg:text-8xl">
             About Me.
           </div>
           Hi! I&#39;m currently a final year student{" "}
@@ -75,6 +76,20 @@ export default function Home() {
           </div>
           <div className="flex items-center justify-center">
             <SiNextdotjs className="text-8xl text-slate-400" />
+          </div>
+        </div>
+      </section>
+
+      {/* Experiences */}
+      <section className="w-auto mt-4 mx-4 py-4 bg-experiences text-black flex flex-col lg:justify-center lg:w-auto lg:items-center lg:px-20 lg:py-8 lg:mx-12">
+        <div className="p-4 leading-relaxed font-bold text-4xl lg:text-xl lg:max-w-2xl lg:leading-8">Experiences.</div>
+        {/* BOC Indonesia */}
+        <div className="ml-4 flex justify-left items-center gap-4">
+          <Image src={BOC} width="50" height="50" alt="BOC Indonesia" className="rounded-full" />
+          <div>
+            <div className="font-bold text-md">BOC Indonesia</div>
+            <div className="">Front-End Web Developer Intern</div>
+            <div className="text-slate-500">03/18 - 05/18</div>
           </div>
         </div>
       </section>
