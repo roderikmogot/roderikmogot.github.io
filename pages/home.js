@@ -1,5 +1,5 @@
 import Roderik from "../public/roderik.png";
-import BOC from "../public/boc.jpeg"
+import BOC from "../public/boc.jpeg";
 import Image from "next/image";
 
 import { FaAngleDown, FaArrowDown } from "react-icons/fa";
@@ -81,15 +81,23 @@ export default function Home() {
       </section>
 
       {/* Experiences */}
-      <section className="w-auto mt-4 mx-4 py-4 bg-experiences text-black flex flex-col lg:justify-center lg:w-auto lg:items-center lg:px-20 lg:py-8 lg:mx-12">
-        <div className="p-4 leading-relaxed font-bold text-4xl lg:text-xl lg:max-w-2xl lg:leading-8">Experiences.</div>
+      <section className="w-auto mt-4 mx-4 py-4 bg-experiences text-black flex flex-col lg:flex-row lg:justify-center lg:w-auto lg:px-20 lg:py-8 lg:mx-12 lg:h-96">
+        <div className="p-4 leading-relaxed font-bold text-4xl lg:text-8xl lg:max-w-2xl lg:leading-8 lg:flex lg:justify-center lg:items-center">
+          Experiences.
+        </div>
         {/* BOC Indonesia */}
-        <div className="ml-4 flex justify-left items-center gap-4">
-          <Image src={BOC} width="50" height="50" alt="BOC Indonesia" className="rounded-full" />
+        <div className="ml-4 flex justify-left items-center gap-4 lg:justify-center lg:mx-auto lg:flex-col lg:w-full lg:h-full">
+          <div className="w-16 h-16 lg:w-24 lg:h-24 lg:relative">
+            <Image
+              src={BOC}
+              alt="BOC Indonesia"
+              className="rounded-full lg:object-fill lg:bg-cover"
+            />
+          </div>
           <div>
-            <div className="font-bold text-md">BOC Indonesia</div>
-            <div className="">Front-End Web Developer Intern</div>
-            <div className="text-slate-500">03/18 - 05/18</div>
+            <div className="font-bold text-md lg:text-2xl lg:text-center">BOC Indonesia</div>
+            <div className="lg:text-xl lg:text-center">Front-End Web Developer Intern</div>
+            <div className="text-slate-500 lg:text-xl lg:text-center">03/18 - 05/18</div>
           </div>
         </div>
       </section>
