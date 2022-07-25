@@ -113,14 +113,14 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section className="w-auto mt-4 mx-4 py-4 text-white bg-black flex flex-col lg:flex-row lg:justify-between lg:w-auto lg:px-20 lg:py-8 lg:mx-12 lg:h-96 lg:gap-12">
+      <section className="w-auto mt-4 mx-4 py-4 text-white bg-black flex flex-col lg:flex-row lg:justify-between lg:items-center lg:w-auto lg:px-20 lg:py-8 lg:mx-12 lg:h-96 lg:gap-24">
         <div className="p-4 leading-relaxed font-bold text-4xl lg:text-8xl lg:max-w-2xl lg:leading-8 lg:flex lg:justify-center lg:items-center">
           Projects.
         </div>
         <div className="lg:grid lg:grid-cols-3 lg:gap-4 lg:w-full lg:content-evenly">
           {/* <div></div> */}
           <div className="flex flex-row items-center mx-4 gap-4 lg:flex-col lg:justify-center">
-            <div className="flex w-36 h-auto lg:w-48 lg:h-24 lg:relative">
+            <div className="flex w-36 h-auto lg:w-48 lg:h-20 lg:relative">
               <Image
                 src={Sukaido}
                 className="lg:bg-white lg:object-fill lg:bg-cover"
