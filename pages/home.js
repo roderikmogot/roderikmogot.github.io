@@ -4,7 +4,14 @@ import Sukaido from "../public/sukaido.png";
 
 import Image from "next/image";
 
-import { FaAngleDown, FaArrowDown } from "react-icons/fa";
+import {
+  FaAngleDown,
+  FaArrowDown,
+  FaDiscord,
+  FaGithub,
+  FaKaggle,
+  FaLinkedin,
+} from "react-icons/fa";
 import {
   SiTensorflow,
   SiNumpy,
@@ -14,15 +21,17 @@ import {
   SiNextdotjs,
   SiGithub,
   SiFigma,
+  SiLinkedin,
+  SiKaggle,
+  SiDiscord,
 } from "react-icons/si";
 
 export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section
-        className="h-screen w-screen p-4 flex flex-col
-      justify-center items-center lg:flex-row lg:gap-4 lg:w-auto lg:h-auto"
+      <section className="h-screen w-screen p-4 flex flex-col
+      justify-center items-center lg:flex-row lg:gap-4 lg:w-auto"
       >
         <Image
           src={Roderik}
@@ -34,19 +43,14 @@ export default function Home() {
             Hi! I Am Roderik Mogot!
           </div>
           <div className="text-sm mt-2 text-slate-400 lg:text-xl">
-            Final year computer science student{" "}
+            Computer science student{" "}
             <span className="bg-blue-700 text-red-400 p-1 font-bold w-fit rounded-md transition ease-in-out duration-700 hover:shadow-lg">
               @BINUS University
             </span>
           </div>
-          <a className="w-fit mx-auto mt-4 px-4 py-3 flex justify-center items-center gap-4 bg-primary text-gray-200 font-bold rounded-md text-lg cursor-pointer transition ease-in-out duration-300 hover:shadow-xl hover:scale-105 lg:mx-0">
-            Projects{" "}
-            <span className="inline-block">
-              <FaAngleDown />
-            </span>
-          </a>
         </div>
       </section>
+
       {/* About */}
       <section className="w-auto mx-4 py-4 items-center bg-black text-white lg:w-auto lg:flex lg:flex-row lg:justify-between lg:px-20 lg:py-8 lg:mx-12 lg:gap-12">
         <div className="p-4 leading-relaxed italic text-slate-100 lg:text-xl lg:max-w-2xl lg:leading-8">
@@ -85,12 +89,12 @@ export default function Home() {
       </section>
 
       {/* Experiences */}
-      <section className="w-auto mt-4 mx-4 py-4 bg-experiences text-black flex flex-col lg:flex-row lg:justify-center lg:w-auto lg:px-20 lg:py-8 lg:mx-12 lg:h-96 lg:gap-12">
+      <section className="w-auto mx-4 py-4 bg-experiences text-black flex flex-col lg:flex-row lg:justify-center lg:w-auto lg:px-20 lg:py-8 lg:mx-12 lg:h-96 lg:gap-12">
         <div className="p-4 leading-relaxed font-bold text-4xl lg:text-8xl lg:max-w-2xl lg:leading-8 lg:flex lg:justify-center lg:items-center">
           Experiences.
         </div>
         {/* BOC Indonesia */}
-        <div className="ml-4 flex justify-left items-center gap-4 lg:justify-center lg:mx-auto lg:flex-col lg:w-full lg:h-full">
+        <div className="ml-4 mb-4 flex justify-left items-center gap-4 lg:justify-center lg:mx-auto lg:flex-col lg:w-full lg:h-full">
           <div className="w-16 h-16 lg:w-24 lg:h-24 lg:relative">
             <Image
               src={BOC}
@@ -105,7 +109,7 @@ export default function Home() {
             <div className="lg:text-xl lg:text-center">
               Front-End Web Developer Intern
             </div>
-            <div className="italic text-slate-400 lg:text-xl lg:text-center">
+            <div className="italic text-black text-opacity-30 lg:text-xl lg:text-center">
               03/18 - 05/18
             </div>
           </div>
@@ -113,17 +117,17 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section className="w-auto mt-4 mx-4 py-4 text-white bg-black flex flex-col lg:flex-row lg:justify-between lg:items-center lg:w-auto lg:px-20 lg:py-8 lg:mx-12 lg:h-96 lg:gap-24">
+      <section className="w-auto mx-4 py-4 text-white bg-black flex flex-col lg:flex-row lg:justify-between lg:items-center lg:w-auto lg:px-20 lg:py-8 lg:mx-12 lg:h-96 lg:gap-24">
         <div className="p-4 leading-relaxed font-bold text-4xl lg:text-8xl lg:max-w-2xl lg:leading-8 lg:flex lg:justify-center lg:items-center">
           Projects.
         </div>
-        <div className="lg:grid lg:grid-cols-3 lg:gap-4 lg:w-full lg:content-evenly">
+        <div className="mb-4 lg:grid lg:grid-cols-3 lg:gap-4 lg:w-full">
           {/* <div></div> */}
           <div className="flex flex-row items-center mx-4 gap-4 lg:flex-col lg:justify-center">
             <div className="flex w-36 h-auto lg:w-48 lg:h-20 lg:relative">
               <Image
                 src={Sukaido}
-                className="lg:bg-white lg:object-fill lg:bg-cover"
+                className="bg-white rounded-sm lg:object-fill lg:bg-cover"
                 alt="Sukaido"
               />
             </div>
@@ -149,6 +153,27 @@ export default function Home() {
             </div>
           </div>
           {/* <div></div> */}
+        </div>
+      </section>
+
+      {/* Reach Me Out */}
+      <section className="w-auto mx-4 py-4 bg-contact text-black flex flex-col lg:flex-row lg:justify-between lg:w-auto lg:px-20 lg:py-8 lg:mx-12 lg:h-96 lg:gap-12">
+        <div className="p-4 font-bold text-4xl lg:text-8xl lg:flex lg:justify-center lg:items-center">
+          Reach Me.
+        </div>
+        <div className="mx-4 mb-2 flex flex-row justify-left items-center gap-4  lg:mx-auto lg:justify-evenly md:w-1/2">
+          <div className="text-4xl lg:text-8xl">
+            <FaDiscord className="rounded-lg p-1 opacity-25 cursor-pointer transition duration-100 hover:border-4 hover:border-black hover:opacity-80 hover:border-opacity-80 hover:shadow-lg"/>
+          </div>
+          <div className="text-4xl lg:text-8xl">
+            <FaLinkedin className="rounded-lg p-1 opacity-25 cursor-pointer transition duration-100 hover:border-4 hover:border-black hover:opacity-80 hover:border-opacity-80 hover:shadow-lg"/>
+          </div>
+          <div className="text-4xl lg:text-8xl">
+            <FaGithub className="rounded-lg p-1 opacity-25 cursor-pointer transition duration-100 hover:border-4 hover:border-black hover:opacity-80 hover:border-opacity-80 hover:shadow-lg"/>
+          </div>
+          <div className="text-4xl lg:text-8xl">
+            <FaKaggle className="rounded-lg p-1 opacity-25 cursor-pointer transition duration-100 hover:border-4 hover:border-black hover:opacity-80 hover:border-opacity-80 hover:shadow-lg"/>
+          </div>
         </div>
       </section>
     </>
