@@ -11,7 +11,7 @@ module.exports = {
         secondary: '#0F3D3E',
         tersier: '#E2DCC8',
         slight_gray: '#F1F1F1',
-        experiences: '#F5EDDC',
+        experiences: '#DFDFDE',
         projects: '#003865'
       }
     },
