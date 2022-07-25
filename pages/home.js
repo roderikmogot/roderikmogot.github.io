@@ -1,5 +1,7 @@
 import Roderik from "../public/roderik.png";
 import BOC from "../public/boc.jpeg";
+import Sukaido from "../public/sukaido.png";
+
 import Image from "next/image";
 
 import { FaAngleDown, FaArrowDown } from "react-icons/fa";
@@ -10,6 +12,8 @@ import {
   SiScikitlearn,
   SiPandas,
   SiNextdotjs,
+  SiGithub,
+  SiFigma
 } from "react-icons/si";
 
 export default function Home() {
@@ -95,9 +99,39 @@ export default function Home() {
             />
           </div>
           <div>
-            <div className="font-bold text-md lg:text-2xl lg:text-center">BOC Indonesia</div>
-            <div className="lg:text-xl lg:text-center">Front-End Web Developer Intern</div>
-            <div className="text-slate-500 lg:text-xl lg:text-center">03/18 - 05/18</div>
+            <div className="font-bold text-md lg:text-2xl lg:text-center">
+              BOC Indonesia
+            </div>
+            <div className="lg:text-xl lg:text-center">
+              Front-End Web Developer Intern
+            </div>
+            <div className="italic text-slate-400 lg:text-xl lg:text-center">
+              03/18 - 05/18
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects */}
+      <section className="w-auto mt-4 mx-4 py-4 text-white bg-black flex flex-col lg:flex-row lg:justify-center lg:w-auto lg:px-20 lg:py-8 lg:mx-12 lg:h-96">
+        <div className="p-4 leading-relaxed font-bold text-4xl lg:text-8xl lg:max-w-2xl lg:leading-8 lg:flex lg:justify-center lg:items-center">
+          Projects.
+        </div>
+        <div className="flex flex-row items-center mx-4 gap-4">
+          <div className="flex w-36 h-auto lg:w-24 lg:h-24 lg:relative">
+            <Image
+              src={Sukaido}
+              className="lg:object-fill lg:bg-cover"
+              alt="Sukaido"
+            />
+          </div>
+          <div className="flex flex-col">
+            <div className="font-bold text-xl">Sukaido</div>
+            <div className="text-sm italic text-slate-400">A Mini Restaurant App</div>
+            <div className="flex flex-row gap-2 mt-2">
+            <button className="flex justify-center items-center gap-2 font-bold text-sm bg-primary text-blue-400 p-2 rounded-md transition ease-in-out duration-150 hover:shadow-blue-400 hover:shadow-md">Github<span className="inline-block"><SiGithub /></span></button>
+            <button className="flex justify-center items-center gap-2 font-bold text-sm bg-blue-700 text-red-400 p-2 rounded-md transition ease-in-out duration-150 hover:shadow-red-400 hover:shadow-md">Figma<span className="inline-block"><SiFigma /></span></button>
+            </div>
           </div>
         </div>
       </section>
