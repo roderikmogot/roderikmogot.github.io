@@ -49,7 +49,7 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section className="w-auto mx-4 py-4 items-center bg-black text-white lg:w-auto lg:flex lg:flex-row lg:justify-between lg:px-20 lg:py-8 lg:mx-12 lg:gap-12">
+      <section className="w-auto py-4 items-center bg-black text-white lg:w-auto lg:flex lg:flex-row lg:justify-between lg:px-20 lg:py-8 lg:gap-12">
         <div className="p-4 leading-relaxed italic text-slate-100 lg:text-xl lg:max-w-2xl lg:leading-8">
           <div className="not-italic font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-blue-700 to-red-400 lg:text-8xl">
             About Me.
@@ -86,7 +86,7 @@ export default function Home() {
       </section>
 
       {/* Experiences */}
-      <section className="w-auto mx-4 py-4 bg-experiences text-black flex flex-col lg:flex-row lg:justify-center lg:w-auto lg:px-20 lg:py-8 lg:mx-12 lg:h-96 lg:gap-12">
+      <section className="w-auto py-4 bg-experiences text-black flex flex-col lg:flex-row lg:justify-center lg:w-auto lg:px-20 lg:py-8 lg:h-96 lg:gap-12">
         <div className="p-4 leading-relaxed font-bold text-4xl lg:text-8xl lg:max-w-2xl lg:leading-8 lg:flex lg:justify-center lg:items-center">
           Experiences.
         </div>
@@ -114,7 +114,7 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section className="w-auto mx-4 py-4 text-white bg-black flex flex-col lg:flex-row lg:justify-between lg:items-center lg:w-auto lg:px-20 lg:py-8 lg:mx-12 lg:h-96 lg:gap-24">
+      <section className="w-auto py-4 text-white bg-black flex flex-col lg:flex-row lg:justify-between lg:items-center lg:w-auto lg:px-20 lg:py-8 lg:h-96 lg:gap-24">
         <div className="p-4 leading-relaxed font-bold text-4xl lg:text-8xl lg:max-w-2xl lg:leading-8 lg:flex lg:justify-center lg:items-center">
           Projects.
         </div>
@@ -154,7 +154,7 @@ export default function Home() {
       </section>
 
       {/* Reach Me Out */}
-      <section className="w-auto mx-4 py-4 bg-contact text-black flex flex-col lg:flex-row lg:justify-between lg:w-auto lg:px-20 lg:py-8 lg:mx-12 lg:h-96 lg:gap-12">
+      <section className="w-auto py-4 bg-contact text-black flex flex-col lg:flex-row lg:justify-between lg:w-auto lg:px-20 lg:py-8 lg:h-96 lg:gap-12">
         <div className="p-4 font-bold text-4xl lg:text-8xl lg:flex lg:justify-center lg:items-center">
           Reach Me.
         </div>
