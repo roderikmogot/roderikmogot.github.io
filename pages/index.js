@@ -3,6 +3,7 @@ import BOC from "../public/boc.jpeg";
 import Sukaido from "../public/sukaido.png";
 
 import Image from "next/image";
+import Head from "next/head";
 
 import {
   FaAngleDown,
@@ -29,6 +30,14 @@ import {
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Roderik Mogot</title>
+        <meta
+          name="description"
+          content="Roderik Mogot - Portfolio"
+        />
+        <link rel="icon" href="/jug.jpeg" />
+      </Head>
       {/* Hero */}
       <section
         className="h-screen w-screen p-4 flex flex-col
