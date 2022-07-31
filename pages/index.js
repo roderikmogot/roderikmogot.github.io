@@ -43,18 +43,15 @@ export default function Home() {
       </Head>
       {/* Hero */}
       <section
-        className="h-screen w-screen p-4 flex flex-col
+        className="h-screen w-screen bg-white p-4 flex flex-col
       justify-center items-center lg:flex-row lg:gap-4 lg:w-auto"
       >
         <Image src={Roderik} alt="Roderik Mogot" />
         <div className="h-50 mt-4 mx-auto text-center lg:flex lg:flex-col lg:text-left lg:mx-0 lg:gap-2">
-          <div className="font-bold text-2xl text-black lg:text-6xl">
-            Hi! I Am Roderik Mogot!
-          </div>
-          <div className="text-sm mt-2 text-slate-400 lg:text-xl">
-            Computer science student{" "}
-            <span className="bg-blue-700 text-red-400 p-1 font-bold w-fit rounded-md transition ease-in-out duration-700 hover:shadow-lg">
-              @BINUS University
+          <div className="font-bold text-2xl text-black lg:text-8xl">
+            Hi! I Am <br />
+            <span className="leading-relaxed font-black text-red-400 p-1 w-fit rounded-md transition ease-in-out duration-700">
+              Roderik Mogot!
             </span>
           </div>
         </div>
@@ -72,8 +69,8 @@ export default function Home() {
           </span>{" "}
           majoring the computer science field. I&#39;m also familiar with
           Python&#39;s known data science libraries like NumPy, pandas,
-          TensorFlow, and scikit-learn. I also do web development using Next and
-          web design as well.
+          TensorFlow, and scikit-learn. I also do web development using React
+          and web design as well.
         </div>
         <div className="p-8 hidden lg:grid lg:grid-cols-3 lg:gap-20 lg:mx-auto lg:w-full lg:h-full">
           <div className="flex items-center justify-center">
