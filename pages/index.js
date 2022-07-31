@@ -127,8 +127,8 @@ export default function Home() {
         <div className="p-4 leading-relaxed font-bold text-4xl lg:text-8xl lg:max-w-2xl lg:leading-8 lg:flex lg:justify-center lg:items-center">
           Portfolio.
         </div>
-        <div className="mb-4 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-8 lg:w-full">
-          <div className="flex flex-row items-center mx-4 gap-4 lg:flex-col lg:justify-center">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 lg:w-full">
+          <div className="flex flex-row items-center mx-4 gap-4  lg:justify-center">
             <div className="flex w-36 h-auto lg:w-48 lg:h-20 lg:relative">
               <Image
                 src={Sukaido}
@@ -136,13 +136,16 @@ export default function Home() {
                 alt="Sukaido"
               />
             </div>
-            <div className="flex flex-col lg:justify-center lg:items-center">
-              <div className="font-bold text-xl lg:text-2xl">Sukaido</div>
-              <div className="text-sm italic text-slate-400 md:text-md">
-                A Mini Restaurant App
+            <div className="flex flex-col lg:justify-center">
+              <div className="font-bold text-xl lg:text-2xl flex flex-col lg:flex-row gap-2 items-start mb-1">
+                <div>Sukaido</div>
               </div>
-              <div className="text-xs italic text-slate-500 md:text-md">
-                Full-Stack React Application w/ CRUD operations
+              <div className="text-sm italic text-slate-400 md:text-md max-w-xs">
+                Created a full-stack React and Express web application that
+                could create, store and cancel orders, also the ability to
+                select, edit, view and delete menu items. This application will
+                be used as a primary system to accept and view orders from
+                customers. The design was created by a friend of mine, Yovanka.
               </div>
               <div className="flex flex-row gap-2 mt-2">
                 <Link href="https://github.com/roderikmogot/sukaido" passHref>
@@ -171,7 +174,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-row items-center mx-4 gap-4 lg:flex-col lg:justify-center">
+          <div className="flex flex-row items-center mx-4 gap-4  lg:justify-center">
             <div className="flex w-36 h-auto lg:w-48 lg:relative">
               <Image
                 src={Qiurio}
@@ -179,15 +182,13 @@ export default function Home() {
                 alt="Qiurio"
               />
             </div>
-            <div className="flex flex-col lg:justify-center lg:items-center">
-              <div className="font-bold text-xl lg:text-2xl">
-                Qiurio Visuals
+            <div className="flex flex-col lg:justify-center">
+              <div className="font-bold text-xl lg:text-2xl flex flex-row gap-2 items-center mb-1">
+                <div>Qiurio</div>
               </div>
-              <div className="text-sm italic text-slate-400 md:text-md">
-                Photo & Videography Agency
-              </div>
-              <div className="text-xs italic text-slate-500 md:text-md">
-                Web Design
+              <div className="text-sm italic text-slate-400 md:text-md max-w-xs">
+                Created a portfolio website for an agency based in Bali, Qiurio
+                Visuals.
               </div>
               <div className="flex flex-row gap-2 mt-2">
                 <Link href="https://qiurio.vercel.app" passHref>
@@ -203,17 +204,17 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex flex-row items-center mx-4 gap-4 lg:flex-col lg:justify-center">
-            <div className="flex w-36 h-auto lg:w-48 lg:h-20 lg:relative">
+          <div className="flex flex-row items-center mx-4 gap-4 lg:justify-center">
+            <div className="flex w-36 h-20 lg:w-48 lg:h-20 lg:relative">
               <GiNinjaMask className="w-full h-full" />
             </div>
-            <div className="flex flex-col lg:justify-center lg:items-center">
-              <div className="font-bold text-xl lg:text-2xl">COVID-19</div>
-              <div className="text-sm italic text-slate-400 md:text-md">
-                Live Monitoring App
+            <div className="flex flex-col lg:justify-center">
+              <div className="font-bold text-xl lg:text-2xl flex flex-row gap-2 items-center mb-1">
+                <div>COVID-19</div>
+                
               </div>
-              <div className="text-xs italic text-slate-500 md:text-md">
-                Next & Prisma
+              <div className="text-sm italic text-slate-400 md:text-md max-w-xs">
+                A side project of mine to see the growth of COVID-19 globally.
               </div>
               <div className="flex flex-row gap-2 mt-2">
                 <Link href="https://salabite.vercel.app" passHref>
@@ -238,14 +239,14 @@ export default function Home() {
           Reach Me.
         </div>
         <div className="mx-4 mb-2 flex flex-row justify-left items-center gap-4  lg:mx-auto lg:justify-evenly md:w-1/2">
-          <div className="text-4xl lg:text-8xl">
+          <div className="text-6xl lg:text-8xl">
             <Link href="https://www.linkedin.com/in/roderikmogot/" passHref>
               <a target="_blank" rel="noopener noreferrer">
                 <FaLinkedin className="rounded-lg p-1 opacity-25 cursor-pointer transition duration-100 hover:border-4 hover:border-black hover:opacity-80 hover:border-opacity-80 hover:shadow-lg" />
               </a>
             </Link>
           </div>
-          <div className="text-4xl lg:text-8xl">
+          <div className="text-6xl lg:text-8xl">
             <Link href="https://github.com/roderikmogot" passHref>
               <a target="_blank" rel="noopener noreferrer">
                 <FaGithub className="rounded-lg p-1 opacity-25 cursor-pointer transition duration-100 hover:border-4 hover:border-black hover:opacity-80 hover:border-opacity-80 hover:shadow-lg" />
