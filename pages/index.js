@@ -128,7 +128,7 @@ export default function Home() {
       {/* Projects */}
       <section className="w-auto py-4 text-white bg-black flex flex-col lg:flex-row lg:justify-between lg:items-center lg:w-full lg:px-20 lg:py-8 lg:gap-24">
         <div className="p-4 leading-relaxed font-bold text-4xl lg:text-8xl lg:max-w-2xl lg:leading-8 lg:flex lg:justify-center lg:items-center">
-          Projects.
+          Portfolio.
         </div>
         <div className="mb-4 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-8 lg:w-full">
           <div className="flex flex-row items-center mx-4 gap-4 lg:flex-col lg:justify-center">
