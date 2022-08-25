@@ -19,12 +19,8 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import {
-  SiTensorflow,
-  SiNumpy,
-  SiReact,
-  SiScikitlearn,
-  SiPandas,
-  SiNextdotjs,
+  SiPython,
+  SiTypescript,
   SiGithub,
   SiFigma,
   SiLinkedin,
@@ -43,14 +39,14 @@ export default function Home() {
       </Head>
       {/* Hero */}
       <section
-        className="h-screen w-screen bg-white p-4 flex flex-col
+        className="h-screen w-screen bg-black text-white p-4 flex flex-col
       justify-center items-center lg:flex-row lg:gap-4 lg:w-auto"
       >
         <Image src={Roderik} alt="Roderik Mogot" />
         <div className="h-50 mt-4 mx-auto text-center lg:flex lg:flex-col lg:text-left lg:mx-0 lg:gap-2">
-          <div className="font-bold text-2xl text-black lg:text-8xl">
+          <div className="font-bold text-2xl text-white lg:text-8xl">
             Hi! I Am <br />
-            <span className="leading-relaxed font-black text-red-400 p-1 w-fit rounded-md transition ease-in-out duration-700">
+            <span className="font-black text-red-400 p-1 w-fit rounded-md transition ease-in-out duration-700">
               Roderik Mogot!
             </span>
           </div>
@@ -72,24 +68,12 @@ export default function Home() {
           TensorFlow, and scikit-learn. I also do web development using React
           and web design as well.
         </div>
-        <div className="p-8 hidden lg:grid lg:grid-cols-3 lg:gap-20 lg:mx-auto lg:w-full lg:h-full">
+        <div className="p-8 hidden lg:grid lg:grid-cols-2 lg:gap-20 lg:mx-auto lg:w-full lg:h-full">
           <div className="flex items-center justify-center">
-            <SiTensorflow className="text-8xl opacity-25 transition duration-100 hover:opacity-80" />
+            <SiPython className="text-8xl opacity-25 transition duration-100 hover:opacity-80" />
           </div>
           <div className="flex items-center justify-center">
-            <SiNumpy className="text-8xl opacity-25 transition duration-100 hover:opacity-80" />
-          </div>
-          <div className="flex items-center justify-center">
-            <SiScikitlearn className="text-8xl opacity-25 transition duration-100 hover:opacity-80" />
-          </div>
-          <div className="flex items-center justify-center">
-            <SiPandas className="text-8xl opacity-25 transition duration-100 hover:opacity-80" />
-          </div>
-          <div className="flex items-center justify-center">
-            <SiReact className="text-8xl opacity-25 transition duration-100 hover:opacity-80" />
-          </div>
-          <div className="flex items-center justify-center">
-            <SiNextdotjs className="text-8xl opacity-25 transition duration-100 hover:opacity-80" />
+            <SiTypescript className="text-8xl opacity-25 transition duration-100 hover:opacity-80" />
           </div>
         </div>
       </section>
