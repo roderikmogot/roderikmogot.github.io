@@ -4,6 +4,7 @@ import Sukaido from "../public/sukaido.png";
 import Qiurio from "../public/qiurio.png";
 import Salabite from "../public/salabite.png";
 import PandaMe from "../public/pandame.png";
+import LastFM from "../public/last-fm.png";
 import PortfolioBox from "../components/PortfolioBox";
 
 import Image from "next/image";
@@ -134,42 +135,18 @@ export default function Home() {
             img={Sukaido}
             title="Sukaido"
             link="test"
+            useWhiteBg
             description="Created a full-stack React and Express web application that could
             create, store and cancel orders, also the ability to select, edit,
             view and delete menu items. This application is being used as a
             primary system to accept and view orders from customers. The
             design was created by a friend of mine, Yovanka."
-          >
-            <div className="flex flex-row gap-2 mt-2">
-              {/* <Link href="https://github.com/roderikmogot/sukaido" passHref>
-                <a target="_blank" rel="noopener noreferrer">
-                  <button className="flex justify-center items-center gap-2 font-bold text-sm bg-primary text-blue-400 p-2 rounded-md transition ease-in-out duration-150 hover:shadow-blue-400 hover:shadow-md lg:text-md lg:p-3">
-                    Github
-                    <span className="inline-block">
-                      <SiGithub />
-                    </span>
-                  </button>
-                </a>
-              </Link> */}
-              {/* <Link
-                href="https://www.figma.com/file/aPcQ6EOR2pFHHIpcx9vYeW/Resto-Project-Desain-Final?node-id=2%3A255"
-                passHref
-              >
-                <a target="_blank" rel="noopener noreferrer">
-                  <button className="flex justify-center items-center gap-2 font-bold text-sm bg-blue-700 text-red-400 p-2 rounded-md transition ease-in-out duration-150 hover:shadow-red-400 hover:shadow-md lg:text-md lg:p-3">
-                    Figma
-                    <span className="inline-block">
-                      <SiFigma />
-                    </span>
-                  </button>
-                </a>
-              </Link> */}
-            </div>
-          </PortfolioBox>
+          ></PortfolioBox>
           <PortfolioBox
             img={Qiurio}
             title="Qiurio Visuals"
             description="Created a portfolio website for an agency based in Bali."
+            useWhiteBg
           >
             <div className="flex flex-row gap-2 mt-2">
               <Link href="https://qiurio.vercel.app" passHref>
@@ -187,10 +164,30 @@ export default function Home() {
           <PortfolioBox
             img={Salabite}
             title="Salabite"
+            useWhiteBg
             description="A side project of mine to see the growth of COVID-19 globally."
           >
             <div className="flex flex-row gap-2 mt-2">
               <Link href="https://salabite.vercel.app" passHref>
+                <a target="_blank" rel="noopener noreferrer">
+                  <button className="flex justify-center items-center gap-2 font-bold text-sm bg-primary text-whites p-2 rounded-md transition ease-in-out duration-150 hover:shadow-white hover:shadow-md lg:text-md lg:p-3">
+                    See site
+                    <span className="inline-block">
+                      <FaArrowRight />
+                    </span>
+                  </button>
+                </a>
+              </Link>
+            </div>
+          </PortfolioBox>
+          <PortfolioBox
+            img={LastFM}
+            title="Last FM"
+            useWhiteBg
+            description="A fun project of mine to display top musicians and songs as well as a search feature to search for artists and songs."
+          >
+            <div className="flex flex-row gap-2 mt-2">
+              <Link href="https://last-fm-two.vercel.app" passHref>
                 <a target="_blank" rel="noopener noreferrer">
                   <button className="flex justify-center items-center gap-2 font-bold text-sm bg-primary text-whites p-2 rounded-md transition ease-in-out duration-150 hover:shadow-white hover:shadow-md lg:text-md lg:p-3">
                     See site

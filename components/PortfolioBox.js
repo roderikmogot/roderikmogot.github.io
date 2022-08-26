@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaYoutube } from "react-icons/fa";
 
-const PortfolioBox = ({ img, title, description, children }) => {
+const PortfolioBox = ({ img, title, description, children, useWhiteBg }) => {
   return (
     <div className="relative">
       <a className="absolute inset-0 z-10 bg-black text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-80 duration-300">
@@ -11,7 +11,7 @@ const PortfolioBox = ({ img, title, description, children }) => {
         {children}
       </a>
       <a href="#" className="relative max-w-full">
-        <div className="h-full flex flex-wrap content-center">
+        <div className={`h-full flex flex-wrap content-center ${useWhiteBg ? "bg-white" : ""}`}>
           <Image src={img} className="object-fill" alt={title} />
         </div>
       </a>
