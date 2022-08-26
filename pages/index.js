@@ -2,12 +2,13 @@ import Roderik from "../public/roderik.png";
 import BOC from "../public/boc.jpeg";
 import Sukaido from "../public/sukaido.png";
 import Qiurio from "../public/qiurio.png";
+import Salabite from "../public/salabite.png"
+import PandaMe from "../public/pandame.png"
+import PortfolioBox from "../components/PortfolioBox";
 
 import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
-
-import { GiNinjaMask } from "react-icons/gi";
 
 import {
   FaAngleDown,
@@ -23,6 +24,8 @@ import {
   SiTypescript,
   SiGithub,
   SiFigma,
+  SiDribbble,
+  SiJavascript,
   SiLinkedin,
   SiKaggle,
   SiDiscord,
@@ -73,7 +76,7 @@ export default function Home() {
             <SiPython className="text-8xl opacity-25 transition duration-100 hover:opacity-80" />
           </div>
           <div className="flex items-center justify-center">
-            <SiTypescript className="text-8xl opacity-25 transition duration-100 hover:opacity-80" />
+            <SiJavascript className="text-8xl opacity-25 transition duration-100 hover:opacity-80" />
           </div>
         </div>
       </section>
@@ -107,113 +110,112 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section className="w-auto py-4 text-white bg-black flex flex-col lg:flex-row lg:justify-between lg:items-center lg:w-full lg:px-20 lg:py-8 lg:gap-24">
-        <div className="p-4 leading-relaxed font-bold text-4xl lg:text-8xl lg:max-w-2xl lg:leading-8 lg:flex lg:justify-center lg:items-center">
+      <section className="w-auto text-white bg-white flex flex-col lg:w-full lg:px-20 lg:py-8">
+        <div className="p-4 leading-relaxed font-bold text-4xl lg:text-8xl lg:max-w-2xl text-black">
           Portfolio.
         </div>
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 lg:w-full">
-          <div className="flex flex-row items-center mx-4 gap-4  lg:justify-center">
-            <div className="flex w-36 h-auto lg:w-48 lg:h-20 lg:relative">
-              <Image
-                src={Sukaido}
-                className="bg-white rounded-sm lg:object-fill lg:bg-cover"
-                alt="Sukaido"
-              />
+        <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-1">
+          <PortfolioBox
+            img={Sukaido}
+            title="Sukaido"
+            link="test"
+            description="Created a full-stack React and Express web application that could
+            create, store and cancel orders, also the ability to select, edit,
+            view and delete menu items. This application will be used as a
+            primary system to accept and view orders from customers. The
+            design was created by a friend of mine, Yovanka."
+          >
+            <div className="flex flex-row gap-2 mt-2">
+              <Link href="https://github.com/roderikmogot/sukaido" passHref>
+                <a target="_blank" rel="noopener noreferrer">
+                  <button className="flex justify-center items-center gap-2 font-bold text-sm bg-primary text-blue-400 p-2 rounded-md transition ease-in-out duration-150 hover:shadow-blue-400 hover:shadow-md lg:text-md lg:p-3">
+                    Github
+                    <span className="inline-block">
+                      <SiGithub />
+                    </span>
+                  </button>
+                </a>
+              </Link>
+              <Link
+                href="https://www.figma.com/file/aPcQ6EOR2pFHHIpcx9vYeW/Resto-Project-Desain-Final?node-id=2%3A255"
+                passHref
+              >
+                <a target="_blank" rel="noopener noreferrer">
+                  <button className="flex justify-center items-center gap-2 font-bold text-sm bg-blue-700 text-red-400 p-2 rounded-md transition ease-in-out duration-150 hover:shadow-red-400 hover:shadow-md lg:text-md lg:p-3">
+                    Figma
+                    <span className="inline-block">
+                      <SiFigma />
+                    </span>
+                  </button>
+                </a>
+              </Link>
             </div>
-            <div className="flex flex-col lg:justify-center">
-              <div className="font-bold text-xl lg:text-2xl flex flex-col lg:flex-row gap-2 items-start mb-1">
-                <div>Sukaido</div>
-              </div>
-              <div className="text-sm italic text-slate-400 md:text-md max-w-xs">
-                Created a full-stack React and Express web application that
-                could create, store and cancel orders, also the ability to
-                select, edit, view and delete menu items. This application will
-                be used as a primary system to accept and view orders from
-                customers. The design was created by a friend of mine, Yovanka.
-              </div>
-              <div className="flex flex-row gap-2 mt-2">
-                <Link href="https://github.com/roderikmogot/sukaido" passHref>
-                  <a target="_blank" rel="noopener noreferrer">
-                    <button className="flex justify-center items-center gap-2 font-bold text-sm bg-primary text-blue-400 p-2 rounded-md transition ease-in-out duration-150 hover:shadow-blue-400 hover:shadow-md lg:text-md lg:p-3">
-                      Github
-                      <span className="inline-block">
-                        <SiGithub />
-                      </span>
-                    </button>
-                  </a>
-                </Link>
-                <Link
-                  href="https://www.figma.com/file/aPcQ6EOR2pFHHIpcx9vYeW/Resto-Project-Desain-Final?node-id=2%3A255"
-                  passHref
-                >
-                  <a target="_blank" rel="noopener noreferrer">
-                    <button className="flex justify-center items-center gap-2 font-bold text-sm bg-blue-700 text-red-400 p-2 rounded-md transition ease-in-out duration-150 hover:shadow-red-400 hover:shadow-md lg:text-md lg:p-3">
-                      Figma
-                      <span className="inline-block">
-                        <SiFigma />
-                      </span>
-                    </button>
-                  </a>
-                </Link>
-              </div>
+          </PortfolioBox>
+          <PortfolioBox
+            img={Qiurio}
+            title="Sukaido"
+            description="Created a portfolio website for an agency based in Bali, Qiurio
+            Visuals."
+          >
+            <div className="flex flex-row gap-2 mt-2">
+              <Link href="https://qiurio.vercel.app" passHref>
+                <a target="_blank" rel="noopener noreferrer">
+                  <button className="flex justify-center items-center gap-2 font-bold text-sm bg-primary text-whites p-2 rounded-md transition ease-in-out duration-150 hover:shadow-white hover:shadow-md lg:text-md lg:p-3">
+                    See site
+                    <span className="inline-block">
+                      <FaArrowRight />
+                    </span>
+                  </button>
+                </a>
+              </Link>
             </div>
-          </div>
-          <div className="flex flex-row items-center mx-4 gap-4  lg:justify-center">
-            <div className="flex w-36 h-auto lg:w-48 lg:relative">
-              <Image
-                src={Qiurio}
-                className="rounded-sm lg:object-fill lg:bg-cover"
-                alt="Qiurio"
-              />
+          </PortfolioBox>
+          <PortfolioBox
+            img={Salabite}
+            title="Salabite"
+            description="A side project of mine to see the growth of COVID-19 globally."
+          >
+            <div className="flex flex-row gap-2 mt-2">
+              <Link href="https://salabite.vercel.app" passHref>
+                <a target="_blank" rel="noopener noreferrer">
+                  <button className="flex justify-center items-center gap-2 font-bold text-sm bg-primary text-whites p-2 rounded-md transition ease-in-out duration-150 hover:shadow-white hover:shadow-md lg:text-md lg:p-3">
+                    See site
+                    <span className="inline-block">
+                      <FaArrowRight />
+                    </span>
+                  </button>
+                </a>
+              </Link>
             </div>
-            <div className="flex flex-col lg:justify-center">
-              <div className="font-bold text-xl lg:text-2xl flex flex-row gap-2 items-center mb-1">
-                <div>Qiurio</div>
-              </div>
-              <div className="text-sm italic text-slate-400 md:text-md max-w-xs">
-                Created a portfolio website for an agency based in Bali, Qiurio
-                Visuals.
-              </div>
-              <div className="flex flex-row gap-2 mt-2">
-                <Link href="https://qiurio.vercel.app" passHref>
-                  <a target="_blank" rel="noopener noreferrer">
-                    <button className="flex justify-center items-center gap-2 font-bold text-sm bg-primary text-whites p-2 rounded-md transition ease-in-out duration-150 hover:shadow-white hover:shadow-md lg:text-md lg:p-3">
-                      See site
-                      <span className="inline-block">
-                        <FaArrowRight />
-                      </span>
-                    </button>
-                  </a>
-                </Link>
-              </div>
+          </PortfolioBox>
+          <PortfolioBox
+            img={PandaMe}
+            title="PandaMe"
+            description="A web design project. Designed by Masud Rana."
+          >
+            <div className="flex flex-row gap-2 mt-2">
+              <Link href="https://pandame.vercel.app" passHref>
+                <a target="_blank" rel="noopener noreferrer">
+                  <button className="flex justify-center items-center gap-2 font-bold text-sm bg-primary text-whites p-2 rounded-md transition ease-in-out duration-150 hover:shadow-white hover:shadow-md lg:text-md lg:p-3">
+                    See site
+                    <span className="inline-block">
+                      <FaArrowRight />
+                    </span>
+                  </button>
+                </a>
+              </Link>
+              <Link href="https://dribbble.com/shots/17351286-Fruit-Food-Delivery-Landing-Page" passHref>
+                <a target="_blank" rel="noopener noreferrer">
+                  <button className="flex justify-center items-center gap-2 font-bold text-sm bg-[#EA4492] text-whites p-2 rounded-md transition ease-in-out duration-150 hover:shadow-white hover:shadow-md lg:text-md lg:p-3">
+                    Dribbble
+                    <span className="inline-block">
+                      <SiDribbble />
+                    </span>
+                  </button>
+                </a>
+              </Link>
             </div>
-          </div>
-          <div className="flex flex-row items-center mx-4 gap-4 lg:justify-center">
-            <div className="flex w-36 h-20 lg:w-48 lg:h-20 lg:relative">
-              <GiNinjaMask className="w-full h-full" />
-            </div>
-            <div className="flex flex-col lg:justify-center">
-              <div className="font-bold text-xl lg:text-2xl flex flex-row gap-2 items-center mb-1">
-                <div>COVID-19</div>
-                
-              </div>
-              <div className="text-sm italic text-slate-400 md:text-md max-w-xs">
-                A side project of mine to see the growth of COVID-19 globally.
-              </div>
-              <div className="flex flex-row gap-2 mt-2">
-                <Link href="https://salabite.vercel.app" passHref>
-                  <a target="_blank" rel="noopener noreferrer">
-                    <button className="flex justify-center items-center gap-2 font-bold text-sm bg-primary text-whites p-2 rounded-md transition ease-in-out duration-150 hover:shadow-white hover:shadow-md lg:text-md lg:p-3">
-                      See site
-                      <span className="inline-block">
-                        <FaArrowRight />
-                      </span>
-                    </button>
-                  </a>
-                </Link>
-              </div>
-            </div>
-          </div>
+          </PortfolioBox>
         </div>
       </section>
 
@@ -226,14 +228,14 @@ export default function Home() {
           <div className="text-6xl lg:text-8xl">
             <Link href="https://www.linkedin.com/in/roderikmogot/" passHref>
               <a target="_blank" rel="noopener noreferrer">
-                <FaLinkedin className="rounded-lg p-1 opacity-25 cursor-pointer transition duration-100 hover:border-4 hover:border-black hover:opacity-80 hover:border-opacity-80 hover:shadow-lg" />
+                <FaLinkedin className="rounded-lg p-1 opacity-25 cursor-pointer transition duration-100 hover:border-4 hover:border-black hover:text-[#0A66C2] hover:opacity-80 hover:border-opacity-80 hover:shadow-lg" />
               </a>
             </Link>
           </div>
           <div className="text-6xl lg:text-8xl">
             <Link href="https://github.com/roderikmogot" passHref>
               <a target="_blank" rel="noopener noreferrer">
-                <FaGithub className="rounded-lg p-1 opacity-25 cursor-pointer transition duration-100 hover:border-4 hover:border-black hover:opacity-80 hover:border-opacity-80 hover:shadow-lg" />
+                <FaGithub className="rounded-lg p-1 opacity-25 cursor-pointer transition duration-100 hover:border-4 hover:border-black hover:text-[#333] hover:opacity-80 hover:border-opacity-80 hover:shadow-lg" />
               </a>
             </Link>
           </div>
