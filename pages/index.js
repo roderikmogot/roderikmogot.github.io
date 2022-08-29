@@ -6,6 +6,7 @@ import Salabite from "../public/salabite.png";
 import PandaMe from "../public/pandame.png";
 import LastFM from "../public/last-fm.png";
 import Salamoal from "../public/salamoal.jpeg";
+import Jageo from "../public/jageo.png"
 import PortfolioBox from "../components/PortfolioBox";
 
 import Image from "next/image";
@@ -249,6 +250,37 @@ export default function Home() {
               </Link>
               <Link
                 href="https://dribbble.com/shots/18968094-Accounting-Dashboard-Design"
+                passHref
+              >
+                <a target="_blank" rel="noopener noreferrer">
+                  <button className="flex justify-center items-center gap-2 font-bold text-sm bg-[#EA4492] text-whites p-2 rounded-md transition ease-in-out duration-150 hover:shadow-white hover:shadow-md lg:text-md lg:p-3">
+                    Dribbble
+                    <span className="inline-block">
+                      <SiDribbble />
+                    </span>
+                  </button>
+                </a>
+              </Link>
+            </div>
+          </PortfolioBox>
+          <PortfolioBox
+            img={Jageo}
+            title="Jageo"
+            description="A web design project. Designed by Yogie Ismanda."
+          >
+            <div className="flex flex-row gap-2 mt-2">
+              <Link href="https://jageo.vercel.app" passHref>
+                <a target="_blank" rel="noopener noreferrer">
+                  <button className="flex justify-center items-center gap-2 font-bold text-sm bg-primary text-whites p-2 rounded-md transition ease-in-out duration-150 hover:shadow-white hover:shadow-md lg:text-md lg:p-3">
+                    See site
+                    <span className="inline-block">
+                      <FaArrowRight />
+                    </span>
+                  </button>
+                </a>
+              </Link>
+              <Link
+                href="https://dribbble.com/shots/19222711-Beehome-Real-estate-website"
                 passHref
               >
                 <a target="_blank" rel="noopener noreferrer">
