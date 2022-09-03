@@ -121,8 +121,8 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section className="w-auto text-white bg-black flex flex-col lg:w-full lg:px-20 lg:py-8">
-        <div className="p-4 leading-relaxed font-bold text-4xl lg:text-8xl lg:max-w-2xl text-black">
+      <section className="w-auto text-white bg-black flex flex-col lg:w-full lg:py-8">
+        <div className="p-4 leading-relaxed font-bold text-4xl lg:text-8xl lg:max-w-2xl text-black lg:px-20">
           <div className="not-italic font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-blue-700 to-red-400 lg:text-8xl">
             Portfolio.
           </div>
