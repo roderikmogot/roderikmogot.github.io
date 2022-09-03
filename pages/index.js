@@ -31,6 +31,8 @@ import {
   SiJavascript,
   SiWhatsapp,
   SiGmail,
+  SiReact,
+  SiTailwindcss,
   SiLinkedin,
   SiKaggle,
   SiDiscord,
@@ -71,26 +73,19 @@ export default function Home() {
           <span className="bg-blue-700 text-red-400 p-1 font-bold w-fit rounded-md transition ease-in-out duration-700 hover:shadow-lg">
             @BINUS University
           </span>{" "}
-          majoring the computer science field. I&apos;m currently having an
-          internship{" "}
-          <span className="bg-blue-700 text-red-400 p-1 font-bold w-fit rounded-md transition ease-in-out duration-700 hover:shadow-lg">
-            <Link href="https://bca.co.id" passHref>
-              <a target="_blank" rel="noopener noreferrer">
-                @BCA
-              </a>
-            </Link>
-          </span>{" "}
-          as an Application Developer. I&#39;m also familiar with Python&#39;s
+          majoring the computer science field. I&#39;m also familiar with Python&#39;s
           known data science libraries like NumPy, pandas, TensorFlow, and
-          scikit-learn. I also do web development using React and web design as
-          well.
+          scikit-learn. I also do web development using React and web design on my free time.
         </div>
-        <div className="p-8 hidden lg:grid lg:grid-cols-2 lg:gap-20 lg:mx-auto lg:w-full lg:h-full">
+        <div className="p-8 hidden lg:grid lg:grid-cols-3 lg:gap-20 lg:mx-auto lg:w-full lg:h-full">
           <div className="flex items-center justify-center">
             <SiPython className="text-8xl opacity-25 transition duration-100 hover:opacity-80" />
           </div>
           <div className="flex items-center justify-center">
-            <SiJavascript className="text-8xl opacity-25 transition duration-100 hover:opacity-80" />
+            <SiReact className="text-8xl opacity-25 transition duration-100 hover:opacity-80" />
+          </div>
+          <div className="flex items-center justify-center">
+            <SiTailwindcss className="text-8xl opacity-25 transition duration-100 hover:opacity-80" />
           </div>
         </div>
       </section>
