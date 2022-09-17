@@ -64,8 +64,8 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section className="w-auto py-4 items-center bg-black text-white lg:w-auto lg:flex lg:flex-row lg:justify-between lg:px-20 lg:py-8 lg:gap-12">
-        <div className="p-4 leading-relaxed italic text-slate-100 lg:text-xl lg:max-w-2xl lg:leading-8">
+      <section className="w-auto py-4 items-center bg-black text-white lg:w-auto lg:flex lg:flex-row lg:justify-between lg:px-20 lg:py-8 lg:gap-20">
+        <div className="p-4 leading-relaxed italic text-slate-100 lg:text-xl lg:max-w-2xl lg:leading-8 w-full">
           <div className="not-italic font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-blue-700 to-red-400 lg:text-8xl">
             About Me.
           </div>
@@ -77,7 +77,7 @@ export default function Home() {
           known data science libraries like NumPy, pandas, TensorFlow, and
           scikit-learn. I also do web development using React and web design on my free time.
         </div>
-        <div className="p-8 hidden lg:grid lg:grid-cols-3 lg:gap-20 lg:mx-auto lg:w-full lg:h-full">
+        <div className="p-8 hidden lg:grid lg:grid-cols-3 lg:gap-16 lg:mx-auto lg:w-full lg:h-full">
           <div className="flex items-center justify-center">
             <SiPython className="text-8xl opacity-25 transition duration-100 hover:opacity-80" />
           </div>
