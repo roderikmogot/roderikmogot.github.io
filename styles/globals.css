@@ -2,12 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('http://fonts.cdnfonts.com/css/avenir');
+@import url("http://fonts.cdnfonts.com/css/avenir");
 
 * {
-    font-family: 'Avenir', sans-serif;
+  font-family: "Avenir", sans-serif;
 }
 
 body {
-    @apply bg-gray-100 overflow-x-hidden
+  @apply bg-gray-100 overflow-x-hidden;
+}
+
+.section-header {
+  @apply p-4 leading-relaxed text-white font-bold text-4xl lg:text-8xl lg:max-w-2xl lg:leading-8 lg:flex lg:justify-center lg:items-center;
+}
+.section-header-2 {
+  @apply p-4 leading-relaxed text-white font-bold text-4xl lg:text-8xl lg:max-w-2xl lg:leading-8 lg:px-24;
 }

@@ -92,7 +92,7 @@ export default function Home() {
 
       {/* Experiences */}
       <section className="w-auto py-4 bg-black text-white flex flex-col lg:flex-row lg:justify-center lg:w-auto lg:px-20 lg:py-8 lg:h-96 lg:gap-12">
-        <div className="p-4 leading-relaxed text-white font-bold text-4xl lg:text-8xl lg:max-w-2xl lg:leading-8 lg:flex lg:justify-center lg:items-center">
+        <div className="section-header">
           <div className="not-italic font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-blue-700 to-red-400 lg:text-8xl">
             Experiences.
           </div>
@@ -121,8 +121,8 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section className="w-auto text-white bg-black flex flex-col lg:w-full lg:py-8">
-        <div className="leading-relaxed p-4 font-bold text-4xl lg:text-8xl lg:max-w-2xl text-black lg:px-24">
+      <section className="w-auto py-4 bg-black text-white flex flex-col lg:justify-center lg:w-auto lg:py-8">
+        <div className="section-header-2">
           <div className="not-italic font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-blue-700 to-red-400 lg:text-8xl">
             Portfolio.
           </div>
