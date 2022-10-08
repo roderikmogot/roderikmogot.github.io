@@ -1,5 +1,6 @@
 import Roderik from "../public/roderik.png";
 import BOC from "../public/boc.jpeg";
+import BCA from "../public/bca.jpeg";
 import Sukaido from "../public/sukaido.png";
 import Qiurio from "../public/qiurio.png";
 import Salabite from "../public/salabite.png";
@@ -115,6 +116,28 @@ export default function Home() {
             </div>
             <div className="italic text-slate-200 text-opacity-30 lg:text-xl lg:text-center">
               03/18 - 05/18
+            </div>
+          </div>
+        </div>
+
+        {/* BCA */}
+        <div className="ml-4 mb-4 flex justify-left items-center gap-4 lg:justify-center lg:mx-auto lg:flex-col lg:w-full lg:h-full">
+          <div className="w-16 h-16 lg:w-24 lg:h-24 lg:relative">
+            <Image
+              src={BCA}
+              alt="Bank Central Asia"
+              className="rounded-3xl lg:object-fill lg:bg-cover"
+            />
+          </div>
+          <div>
+            <div className="font-bold text-md lg:text-2xl lg:text-center">
+              Bank Central Asia
+            </div>
+            <div className="lg:text-xl lg:text-center">
+              Full Stack Web Developer Intern
+            </div>
+            <div className="italic text-slate-200 text-opacity-30 lg:text-xl lg:text-center">
+              09/22 - Present
             </div>
           </div>
         </div>
