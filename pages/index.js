@@ -71,12 +71,12 @@ export default function Home() {
             About Me.
           </div>
           Hi! I&#39;m currently a final year student{" "}
-          <span className="bg-blue-700 text-red-400 p-1 font-bold w-fit rounded-md transition ease-in-out duration-700 hover:shadow-lg">
+          <span className="px-2 bg-blue-700 text-red-400 p-1 font-bold w-fit rounded-md transition ease-in-out duration-700 hover:shadow-lg">
             @BINUS University
           </span>{" "}
-          majoring the computer science field. I&#39;m also familiar with Python&#39;s
-          known data science libraries like NumPy, pandas, TensorFlow, and
-          scikit-learn. I also do web development using React and web design on my free time.
+          majoring the computer science field. I mostly work with Python&#39;s
+          known data science libraries such as NumPy, pandas, TensorFlow, and
+          scikit-learn. At the same time, I also do web development using React and web design on my free time.
         </div>
         <div className="p-8 hidden lg:grid lg:grid-cols-3 lg:gap-16 lg:mx-auto lg:w-full lg:h-full">
           <div className="flex items-center justify-center">
