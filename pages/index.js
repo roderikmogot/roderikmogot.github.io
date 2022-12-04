@@ -85,8 +85,13 @@ export default function Home() {
 						<span className="px-2 bg-blue-700 text-red-400 p-1 font-bold w-fit rounded-md transition ease-in-out duration-700 hover:shadow-lg">
 							Bank BCA
 						</span>
-						. There, I use React for the frontend, Node.js and Microsoft
-						SQL Server for the backend and the database.
+						. There, I use React for the frontend, Node.js and Microsoft SQL
+						Server for the backend and the database.
+					</div>
+					<div className="mt-5">
+						I&apos;m always open for any opportunities related to web development
+						or data science projects. If you have any questions, feel free to contact me
+						through my social media or email below.
 					</div>
 				</div>
 				<div className="p-8 hidden lg:grid lg:grid-cols-3 lg:gap-16 lg:mx-auto lg:w-full lg:h-full">
