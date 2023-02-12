@@ -71,27 +71,12 @@ export default function Home() {
 					<div className="not-italic font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-blue-700 to-red-400 lg:text-8xl">
 						About Me.
 					</div>
-					Hello there! I&apos;m Roderik. I&#39;m currently a final year student
-					at{" "}
-					<span className="px-2 bg-blue-700 text-red-400 p-1 font-bold w-fit rounded-md transition ease-in-out duration-700 hover:shadow-lg">
-						BINUS University
-					</span>{" "}
-					majoring the computer science field. During my studies, I mostly work
-					with Python&#39;s known data science libraries such as NumPy, pandas,
-					TensorFlow, and scikit-learn.
+					Greetings, I am Roderik, a final-year computer science student at BINUS University. During my academic journey, I have honed my skills in the data science field and have gained proficiency in using Python libraries such as NumPy, pandas, TensorFlow, and scikit-learn.
 					<div className="mt-5">
-						Meanwhile, I am currently pursuing an internship as a Full Stack Web
-						Developer at PT Bank Central Asia Tbk or better known as{" "}
-						<span className="px-2 bg-blue-700 text-red-400 p-1 font-bold w-fit rounded-md transition ease-in-out duration-700 hover:shadow-lg">
-							Bank BCA
-						</span>
-						. There, I use React, Node.js as the backend, Microsoft SQL
-						Server and MySQL as the database.
+						I am currently undergoing an internship as a Full Stack Web Developer at PT Bank Central Asia Tbk (Bank BCA), where I have the opportunity to work with cutting-edge technologies such as Typescript, React, Node.js, Microsoft SQL Server, and MySQL.
 					</div>
 					<div className="mt-5">
-						I&apos;m always open for any opportunities related to web development
-						or data science projects. If you have any questions, feel free to contact me
-						through my social media or email below.
+						I am always open to exploring new opportunities in web development and data science projects. If you have any inquiries, feel free to reach out to me through my social media or email, which I will be happy to provide.
 					</div>
 				</div>
 				<div className="p-8 hidden lg:grid lg:grid-cols-3 lg:gap-16 lg:mx-auto lg:w-full lg:h-full">
