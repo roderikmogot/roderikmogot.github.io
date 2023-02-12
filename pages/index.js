@@ -172,12 +172,7 @@ export default function Home() {
 						title="Sukaido"
 						link="test"
 						useWhiteBg
-						description="Created a full-stack React and Express web application that could
-            create, store and cancel orders, also the ability to select, edit,
-            view and delete menu items. This application is being used as a
-            primary system to accept and view orders from customers. The
-            design was created by a friend of mine, Yovanka."
-					></PortfolioBox>
+						description="I have developed a comprehensive, full-stack web application utilizing React and Express technologies, which enables seamless creation, storage, and cancellation of orders. The application also provides a user-friendly interface for selecting, editing, viewing, and deleting menu items, making it the primary system for accepting and managing customer orders. The visually appealing design of the application was created by my colleague, Yovanka."/>
 					<PortfolioBox
 						img={Qiurio}
 						title="Qiurio Visuals"
