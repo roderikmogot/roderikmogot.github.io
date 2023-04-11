@@ -76,7 +76,7 @@ export default function Home() {
 						I am currently undergoing an internship as a Full Stack Web Developer at PT Bank Central Asia Tbk (Bank BCA), where I have the opportunity to work with cutting-edge technologies such as Typescript, React, Node.js, Microsoft SQL Server, and MySQL.
 					</div>
 					<div className="mt-5">
-						I am always open to exploring new opportunities in web development and data science projects. If you have any inquiries, feel free to reach out to me through my social media or email, which I will be happy to provide.
+						I am always open to explore new opportunities in web development and data science projects. If you have any inquiries, feel free to reach out to me through my social media or email, which I will be happy to provide.
 					</div>
 				</div>
 				<div className="p-8 hidden lg:grid lg:grid-cols-3 lg:gap-16 lg:mx-auto lg:w-full lg:h-full">
