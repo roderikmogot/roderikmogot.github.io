@@ -47,7 +47,7 @@ export default function Home() {
 			<Head>
 				<title>Roderik Mogot</title>
 				<meta name="description" content="Roderik Mogot - Portfolio" />
-				<link rel="icon" href="/jug.jpeg" />
+				<link rel="icon" href="/roderik.png" />
 			</Head>
 			{/* Hero */}
 			<section
