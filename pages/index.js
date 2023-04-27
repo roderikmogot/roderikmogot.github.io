@@ -73,7 +73,7 @@ export default function Home() {
 					</div>
 						Greetings, I am Roderik, a final-year computer science student at BINUS University. During my academic journey, I have honed my skills in the area of data science and have become skilled in utilizing Python libraries. Additionally, I have experience in creating web design portos and building fully functional web applications using React.
 					<div className="mt-5">
-						I am currently undergoing an internship as a Full Stack Web Developer at PT Bank Central Asia Tbk (Bank BCA), where I have the opportunity to work with cutting-edge technologies such as Typescript, React, Node.js, Microsoft SQL Server, and MySQL.
+						I am currently undergoing an internship as a Full Stack Web Developer at a private banking company in Indonesia, where I have the opportunity to work with cutting-edge technologies such as Typescript, React, Node.js, Microsoft SQL Server, and MySQL.
 					</div>
 					<div className="mt-5">
 						I am always open to explore new opportunities in web development and data science projects. If you have any inquiries, feel free to reach out to me through my social media or email, which I will be happy to provide.
