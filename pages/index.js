@@ -71,7 +71,7 @@ export default function Home() {
 					<div className="not-italic font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-blue-700 to-red-400 lg:text-8xl">
 						About Me.
 					</div>
-					Greetings, I am Roderik, a final-year computer science student at BINUS University. During my academic journey, I have honed my skills in the data science field and have gained proficiency in using Python libraries such as NumPy, pandas, TensorFlow, and scikit-learn.
+						Greetings, I am Roderik, a final-year computer science student at BINUS University. During my academic journey, I have honed my skills in the area of data science and have become skilled in utilizing Python libraries. Additionally, I have experience in creating web design portos and building fully functional web applications using React.
 					<div className="mt-5">
 						I am currently undergoing an internship as a Full Stack Web Developer at PT Bank Central Asia Tbk (Bank BCA), where I have the opportunity to work with cutting-edge technologies such as Typescript, React, Node.js, Microsoft SQL Server, and MySQL.
 					</div>
