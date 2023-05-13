@@ -87,9 +87,9 @@ export default function Home() {
           <div className="not-italic font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-blue-700 to-red-400 lg:text-8xl">
             About Me.
           </div>
-          Greetings, I'm Roderik, a senior undergraduate pursuing a degree in
-          computer science at BINUS University. Throughout my academic path, I
-          have focused on developing my expertise in data science and web
+          Greetings, I&apos;m Roderik, a senior undergraduate pursuing a degree
+          in computer science at BINUS University. Throughout my academic path,
+          I have focused on developing my expertise in data science and web
           development. I have practical knowledge in constructing web design
           portfolios and developing comprehensive web applications using React.
           <div className="mt-5">
