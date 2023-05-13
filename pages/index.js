@@ -162,7 +162,7 @@ export default function Home() {
               Bank Central Asia
             </div>
             <div className="lg:text-xl lg:text-center">
-              Full Stack Web Developer Intern
+              Application Developer - Web
             </div>
             <div className="italic text-slate-200 text-opacity-30 lg:text-xl lg:text-center">
               09/22 - Present
