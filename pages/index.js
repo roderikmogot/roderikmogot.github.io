@@ -93,10 +93,10 @@ export default function Home() {
           development. I have practical knowledge in constructing web design
           portfolios and developing comprehensive web applications using React.
           <div className="mt-5">
-            I am currently undergoing an internship as a Full Stack Web
-            Developer at a private banking company in Indonesia, where I have
-            the opportunity to work with cutting-edge technologies such as
-            Typescript, React, Node.js, Microsoft SQL Server, and MySQL.
+            I am currently undergoing an internship as an Application Developer
+            - Web at a private banking company in Indonesia, where I have the
+            opportunity to work with cutting-edge technologies such as
+            Typescript, React, Node.js, Microsoft SQL Server, MySQL, and PL/SQL.
           </div>
           <div className="mt-5">
             I am always open to explore new opportunities in web development and
