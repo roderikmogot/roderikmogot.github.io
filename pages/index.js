@@ -49,6 +49,21 @@ export default function Home() {
         <title>Roderik Mogot</title>
         <meta name="description" content="Roderik Mogot - Portfolio" />
         <link rel="icon" href="/roderik.png" />
+        <meta property="og:title" content="Roderik Mogot" />
+        <meta property="og:description" content="Portfolio of Roderik Mogot" />
+        <meta property="og:image" content="https://roderikmogot.github.io" />
+        <meta property="og:url" content="https://roderikmogot.github.io/" />
+        <meta property="og:type" content="website" />
+        <script type="application/ld+json">
+          {`{
+              "@context": "https://schema.org/",
+              "@type": "WebSite",
+              "name": "Roderik Mogot",
+              "url": "https://yourdomain.com/",
+              "description": "Portfolio of Roderik Mogot",
+              "image": "https://yourdomain.com/roderik.png"
+          } `}
+        </script>
       </Head>
       {/* Hero */}
       <section
