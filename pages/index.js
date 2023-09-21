@@ -44,12 +44,11 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <script type="application/ld+json">
           {`{
-              "@context": "https://schema.org/",
-              "@type": "WebSite",
+              "@context": "https://roderikmogot.github.io/",
+              "@type": "website",
               "name": "Roderik Mogot",
-              "url": "https://yourdomain.com/",
-              "description": "Portfolio of Roderik Mogot",
-              "image": "https://yourdomain.com/roderik.png"
+              "url": "https://roderikmogot.github.io/",
+              "description": "Portfolio of Roderik Mogot"
           } `}
         </script>
       </Head>
