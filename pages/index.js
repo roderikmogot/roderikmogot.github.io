@@ -74,17 +74,11 @@ export default function Home() {
           <div className="not-italic font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-blue-700 to-red-400 lg:text-8xl">
             About Me.
           </div>
-          Greetings, I&apos;m Roderik, a senior undergraduate pursuing a degree
-          in computer science at BINUS University. Throughout my academic path,
+          Greetings, I&apos;m Roderik. Throughout my academic path,
           I have focused on developing my expertise in data science and web
           development. I have practical knowledge in constructing web design
-          portfolios and developing comprehensive web applications using React.
-          <div className="mt-5">
-            I am currently undergoing an internship as an Application Developer
-            - Web at a private banking company in Indonesia, where I have the
-            opportunity to work with cutting-edge technologies such as
-            Typescript, React, Node.js, Microsoft SQL Server, MySQL, and PL/SQL.
-          </div>
+          portfolios and developing comprehensive progressive web applications.
+            
           <div className="mt-5">
             I am always open to explore new opportunities in web development and
             data science projects. If you have any inquiries, feel free to reach
