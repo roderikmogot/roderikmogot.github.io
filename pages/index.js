@@ -145,7 +145,7 @@ export default function Home() {
               Application Developer - Web
             </div>
             <div className="italic text-slate-200 text-opacity-30 lg:text-xl lg:text-center">
-              09/22 - Present
+              09/22 - 09/2023
             </div>
           </div>
         </div>
