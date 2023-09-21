@@ -1,8 +1,8 @@
 import PortfolioBox from "../components/PortfolioBox";
 import BCA from "../public/bca.jpeg";
 import BOC from "../public/boc.jpeg";
-import Jageo from "../public/jageo.png";
 import DesaPecatu from "../public/desa_pecatu.jpeg";
+import Jageo from "../public/jageo.png";
 import LastFM from "../public/last-fm.png";
 import PandaMe from "../public/pandame.png";
 import Qiurio from "../public/qiurio.png";
@@ -17,29 +17,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 import {
-  FaAngleDown,
-  FaArrowDown,
   FaArrowRight,
-  FaDiscord,
-  FaGithub,
-  FaKaggle,
-  FaLinkedin,
+  FaLinkedin
 } from "react-icons/fa";
 import {
-  SiDiscord,
   SiDribbble,
   SiFigma,
-  SiGithub,
   SiGmail,
-  SiJavascript,
-  SiKaggle,
-  SiLinkedin,
   SiPython,
   SiReact,
   SiTailwindcss,
-  SiTypescript,
-  SiVercel,
-  SiWhatsapp,
+  SiWhatsapp
 } from "react-icons/si";
 
 export default function Home() {
