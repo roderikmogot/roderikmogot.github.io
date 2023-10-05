@@ -131,7 +131,7 @@ export default function Container() {
               className="flex space-x-4"
               style={{ width: `${projects.length * 300}px` }}
             >
-              {projects.map(({ title, description, src }) => (
+              {projects.map(({ title, src }) => (
                 <div
                   key={title}
                   className="rounded-md bg-transparent w-[300px]"
