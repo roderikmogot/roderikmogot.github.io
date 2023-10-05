@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import TypeWriter from "@/components/typewriter";
 
 import BOC from "../public/boc.jpeg";
