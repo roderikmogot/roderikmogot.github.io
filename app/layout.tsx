@@ -12,11 +12,7 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: [
-    "Roderik Yohanes Mogot",
-    "Roderik Mogot",
-    "Software Engineer",
-  ],
+  keywords: ["Roderik Yohanes Mogot", "Roderik Mogot", "Software Engineer"],
   authors: [
     {
       name: "Roderik Mogot",
@@ -56,26 +52,24 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-export default function RootLayout({
-  children,
-}: RootLayoutProps) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
         <head />
-        <body className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
-        )}>
+        <body
+          className={cn(
+            "min-h-screen bg-background font-sans antialiased bg-[url('../public/background-light.svg')] dark:bg-[url('../public/background-dark.svg')]",
+            fontSans.variable,
+          )}
+        >
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            <div className="relative flex min-h-screen flex-col">
-              {children}
-            </div>
+            <div className="relative flex flex-col">{children}</div>
           </ThemeProvider>
         </body>
       </html>
