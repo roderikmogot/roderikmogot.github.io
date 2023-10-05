@@ -36,6 +36,7 @@ export default function TypeWriter() {
         }, currentWord.length * 100); // Delay before clearing
       }, 1000); // Delay before shifting
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentWordIndex, textIndex, words, wordChanging]);
 
   return (

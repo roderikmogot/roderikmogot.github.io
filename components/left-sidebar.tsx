@@ -49,7 +49,7 @@ export default function LeftSidebar() {
         <Separator className="mb-3 mt-5" />
         <div className="font-bold flex flex-row items-center gap-2">
           {linkIcons.map(({ href, icon }) => (
-            <LinkIcon href={href} icon={icon} />
+            <LinkIcon key={href} href={href} icon={icon} />
           ))}
         </div>
       </div>
