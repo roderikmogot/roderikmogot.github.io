@@ -33,15 +33,14 @@ export default function LeftSidebar() {
       )}
     >
       <div className="w-full flex flex-col items-center relative">
-        <div className="pointer-events-none absolute w-[261px] h-[261px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-l from-[#a853ba] to-[#2a8af6] mix-blend-normal opacity-5 dark:opacity-[0.15] blur-[60px]" />
-        <div className="bg-black/50 rounded-full">
+        <div className="bg-black/50 rounded-full shadow-lg shadow-gray-700/40">
           <Image
             src={ProfilePicture}
             alt="Profile Picture"
             className="w-24 h-24 object-cover rounded-full"
           />
         </div>
-        <p className="leading-lg text-black font-bold text-2xl mt-3 text-foreground dark:text-white">
+        <p className="leading-lg text-black font-bold text-2xl mt-5 text-foreground dark:text-white">
           Roderik Mogot
         </p>
         <p className="leading-6 text-black/50 dark:text-white/50 text-md">
