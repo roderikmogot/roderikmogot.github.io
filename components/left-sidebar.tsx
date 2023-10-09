@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site";
 import { LinkIcon } from "@/components/icons";
 import { Separator } from "@/components/ui/separator";
 
-import ProfilePicture from "@/public/pp.png";
+import ProfilePicture from "@/public/pp.jpg";
 
 import { cn } from "@/lib/utils";
 
@@ -38,7 +38,7 @@ export default function LeftSidebar() {
           <Image
             src={ProfilePicture}
             alt="Profile Picture"
-            className="w-24 h-24 object-contain"
+            className="w-24 h-24 object-cover rounded-full"
           />
         </div>
         <p className="leading-lg text-black font-bold text-2xl mt-3 text-foreground dark:text-white">
