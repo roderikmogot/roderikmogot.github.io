@@ -120,6 +120,7 @@ export default function Container() {
   return (
     <section className="p-4 w-full bg-transparent">
       <div className="flex flex-col justify-center">
+        <p className="md:hidden text-xl font-black">Hi, I&apos;m Roderik!</p>
         <div className="text-2xl md:text-7xl mt-2 text-black dark:text-white hidden md:inline-block">
           <p className="tracking-tight inline-block">i build&nbsp;</p>
           <span className="font-black inline-block">
@@ -127,7 +128,7 @@ export default function Container() {
           </span>
         </div>
 
-        <div className="mt-0.5">
+        <div className="mt-2">
           <p className="text-sm md:text-md leading-tight text-foreground/60">
             Passionate about the fusion of data science and web development, I
             bring a unique blend of skills and experiences to the table. With a
