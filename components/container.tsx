@@ -15,13 +15,7 @@ import Salamoal from "../public/salamoal.jpeg";
 import Serviso from "../public/serviso.jpg";
 import Salabite from "../public/salabite.png";
 import Link from "next/link";
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 
 const experiences = [
   {
@@ -126,7 +120,7 @@ export default function Container() {
   return (
     <section className="p-4 w-full bg-transparent">
       <div className="flex flex-col justify-center">
-        <div className="text-2xl md:text-7xl mt-2 text-black dark:text-white">
+        <div className="text-2xl md:text-7xl mt-2 text-black dark:text-white hidden md:inline-block">
           <p className="tracking-tight inline-block">i build&nbsp;</p>
           <span className="font-black inline-block">
             <TypeWriter />
@@ -134,7 +128,7 @@ export default function Container() {
         </div>
 
         <div className="mt-0.5">
-          <p className="text-md leading-tight text-foreground/60">
+          <p className="text-sm md:text-md leading-tight text-foreground/60">
             Passionate about the fusion of data science and web development, I
             bring a unique blend of skills and experiences to the table. With a
             proven track record in both fields, I have honed my abilities to
@@ -197,10 +191,10 @@ export default function Container() {
                 >
                   <Link href={url} target="_blank">
                     <CardHeader className="p-5">
-                      <CardTitle className="font-semibold text-xl dark:text-white">
+                      <CardTitle className="font-semibold text-md md:text-xl dark:text-white">
                         {title}
                       </CardTitle>
-                      <CardDescription className="mt-1 text-sm text-foreground/50 dark:text-grey-700 leading-tight">
+                      <CardDescription className="mt-1 text-sm md:text-md text-foreground/50 leading-none">
                         {description}
                       </CardDescription>
                       <div className="py-2.5 px-0 space-x-1.5">
