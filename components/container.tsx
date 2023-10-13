@@ -169,8 +169,10 @@ export default function Container() {
                     {date}
                   </p>
                   <div className="relative gap-1.5 md:w-5/6 space-x-1.5">
-                    {tools.map((tool) => (
-                      <Badge variant="default">{tool}</Badge>
+                    {tools.map((tool, index) => (
+                      <Badge key={index} variant="default">
+                        {tool}
+                      </Badge>
                     ))}
                   </div>
                 </div>
@@ -199,8 +201,10 @@ export default function Container() {
                         {description}
                       </CardDescription>
                       <div className="py-2.5 px-0 space-x-1.5">
-                        {tools.map((tool) => (
-                          <Badge variant="default">{tool}</Badge>
+                        {tools.map((tool, index) => (
+                          <Badge key={index} variant="default">
+                            {tool}
+                          </Badge>
                         ))}
                       </div>
                     </CardHeader>
