@@ -43,8 +43,8 @@ export default function LeftSidebar() {
         <p className="leading-lg text-black font-bold text-2xl mt-5 text-foreground dark:text-white">
           Roderik Mogot
         </p>
-        <p className="leading-6 text-black/50 dark:text-white/50 text-md">
-          an engineer
+        <p className="leading-6 text-black/50 dark:text-white/50 text-sm md:text-md">
+          fellow engineer
         </p>
         <Separator className="mb-3 mt-5" />
         <div className="font-bold flex flex-row items-center gap-2">
