@@ -66,7 +66,7 @@ const projects = [
       "A POS system that I developed for a friend of mine's restaurant.",
   },
   {
-    title: "Qiurio",
+    title: "Qiurio Visuals",
     src: Qiurio,
     tools: ["Next.js", "Tailwind CSS"],
     url: "https://qiurio.vercel.app",
