@@ -16,6 +16,7 @@ import Serviso from "../public/serviso.jpg";
 import Salabite from "../public/salabite.png";
 import Link from "next/link";
 import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import { useState } from "react";
 
 const experiences = [
   {
@@ -117,6 +118,8 @@ const projects = [
 ];
 
 export default function Container() {
+  const [projectsToShow, setProjectsToShow] = useState(4);
+
   return (
     <section className="p-4 w-full bg-transparent">
       <div className="flex flex-col justify-center">
@@ -187,31 +190,43 @@ export default function Container() {
           </p>
           <div className="mt-1 relative overflow-x-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4 gap-y-5">
-              {projects.map(({ title, url, description, tools }) => (
-                <Card
-                  key={title}
-                  className="border-black dark:border-white bg-transparent rounded-md text-black transform duration-150 shadow-md hover:shadow-gray-500 cursor-pointer"
-                >
-                  <Link href={url} target="_blank">
-                    <CardHeader className="p-5">
-                      <CardTitle className="font-semibold text-md md:text-xl dark:text-white">
-                        {title}
-                      </CardTitle>
-                      <CardDescription className="mt-1 text-sm md:text-md text-foreground/50 leading-none">
-                        {description}
-                      </CardDescription>
-                      <div className="py-2.5 px-0 space-x-1.5">
-                        {tools.map((tool, index) => (
-                          <Badge key={index} variant="default">
-                            {tool}
-                          </Badge>
-                        ))}
-                      </div>
-                    </CardHeader>
-                  </Link>
-                </Card>
-              ))}
+              {projects
+                .slice(0, projectsToShow)
+                .map(({ title, url, description, tools }) => (
+                  <Card
+                    key={title}
+                    className="border-black dark:border-white bg-transparent rounded-md text-black transform duration-150 shadow-md hover:shadow-gray-500 cursor-pointer"
+                  >
+                    <Link href={url} target="_blank">
+                      <CardHeader className="p-5">
+                        <CardTitle className="font-semibold text-md md:text-xl dark:text-white">
+                          {title}
+                        </CardTitle>
+                        <CardDescription className="mt-1 text-sm md:text-md text-foreground/50 leading-none">
+                          {description}
+                        </CardDescription>
+                        <div className="py-2.5 px-0 space-x-1.5">
+                          {tools.map((tool, index) => (
+                            <Badge key={index} variant="default">
+                              {tool}
+                            </Badge>
+                          ))}
+                        </div>
+                      </CardHeader>
+                    </Link>
+                  </Card>
+                ))}
             </div>
+            {projects.length > projectsToShow && (
+              <div className="flex justify-center mt-4">
+                <p
+                  className="text-sm md:text-md text-center text-foreground/50 cursor-pointer underline"
+                  onClick={() => setProjectsToShow(projectsToShow + 4)}
+                >
+                  Load more...
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
