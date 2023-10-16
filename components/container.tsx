@@ -157,7 +157,7 @@ export default function Container() {
     <section className="p-4 w-full bg-transparent">
       <div className="flex flex-col justify-center">
         <p className="md:hidden text-xl font-black">Hi, I&apos;m Roderik!</p>
-        <div className="text-2xl md:text-7xl mt-2 text-black dark:text-white hidden md:inline-block">
+        <div className="text-2xl md:text-6xl lg:text-8xl mt-2 text-black dark:text-white hidden md:inline-block">
           <p className="tracking-tight inline-block">i build&nbsp;</p>
           <span className="font-black inline-block">
             <TypeWriter />
