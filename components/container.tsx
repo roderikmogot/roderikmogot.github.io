@@ -269,9 +269,9 @@ export default function Container() {
           <div className="mt-1 relative space-y-4">
             {publications.map(
               ({ title, authors, abstract, year, citation, tools }) => (
-                <Card>
+                <Card className="border-black dark:border-white bg-transparent rounded-md text-black transform duration-150 shadow-md hover:shadow-gray-500 cursor-pointer">
                   <CardHeader>
-                    <CardTitle className="leading-none md:leading-tight tracking-tighter">
+                    <CardTitle className="font-semibold text-md md:text-xl dark:text-white">
                       {title}
                     </CardTitle>
                     <CardDescription className="line-clamp-2 md:line-clamp-none">
@@ -299,7 +299,7 @@ export default function Container() {
                     ))}
                     <p className="text-foreground/50 text-sm">{year}</p>
                     <Button
-                      variant="outline"
+                      variant="default"
                       className="px-4 py-0 mt-2 w-full md:w-fit"
                       onClick={() => navigator.clipboard.writeText(citation)}
                     >
