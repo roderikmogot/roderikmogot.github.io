@@ -269,7 +269,10 @@ export default function Container() {
           <div className="mt-1 relative space-y-4">
             {publications.map(
               ({ title, authors, abstract, year, citation, tools }) => (
-                <Card className="border-black dark:border-white bg-transparent rounded-md text-black transform duration-150 shadow-md hover:shadow-gray-500 cursor-pointer">
+                <Card
+                  key={title}
+                  className="border-black dark:border-white bg-transparent rounded-md text-black transform duration-150 shadow-md hover:shadow-gray-500 cursor-pointer"
+                >
                   <CardHeader>
                     <CardTitle className="font-semibold text-md md:text-xl dark:text-white">
                       {title}
@@ -292,6 +295,7 @@ export default function Container() {
                           "inline text-foreground/50",
                           author === "Roderik Mogot" ? "text-foreground" : "",
                         )}
+                        key={index}
                       >
                         {author}
                         {index < authors.length - 1 ? <span>, </span> : null}
