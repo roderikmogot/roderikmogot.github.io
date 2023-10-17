@@ -2,6 +2,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site";
 import type { Metadata } from "next";
 
+import { Analytics } from "@/components/analytics";
 import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import "./globals.css";
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           >
             <div className="relative flex flex-col">{children}</div>
           </ThemeProvider>
+          <Analytics />
         </body>
       </html>
     </>
