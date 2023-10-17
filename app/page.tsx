@@ -1,10 +1,9 @@
 "use client";
 
-import React from "react";
+import Container from "@/components/container";
+import DarkModeButton from "@/components/dark-mode";
 import LeftSidebar from "@/components/left-sidebar";
 import { PageHeader } from "@/components/page-header";
-import DarkModeButton from "@/components/dark-mode";
-import Container from "@/components/container";
 import "./globals.css";
 
 export default function Home() {
