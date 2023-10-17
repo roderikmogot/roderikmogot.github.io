@@ -1,20 +1,23 @@
 import Image from "next/image";
 
-import { Badge } from "@/components/ui/badge";
 import TypeWriter from "@/components/typewriter";
+import { Badge } from "@/components/ui/badge";
 
-import BOC from "../public/boc.jpeg";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { useState } from "react";
 import BCA from "../public/bca.png";
-import Sukaido from "../public/sukaido.png";
-import Jageo from "../public/jageo.png";
-import Qiurio from "../public/qiurio.png";
-import LastFM from "../public/last-fm.png";
+import BOC from "../public/boc.jpeg";
 import DesaPecatu from "../public/desa_pecatu.jpeg";
+import Jageo from "../public/jageo.png";
+import LastFM from "../public/last-fm.png";
 import PandaMe from "../public/pandame.png";
+import Qiurio from "../public/qiurio.png";
+import Salabite from "../public/salabite.png";
 import Salamoal from "../public/salamoal.jpeg";
 import Serviso from "../public/serviso.jpg";
-import Salabite from "../public/salabite.png";
-import Link from "next/link";
+import Sukaido from "../public/sukaido.png";
+import { Button } from "./ui/button";
 import {
   Card,
   CardContent,
@@ -22,9 +25,6 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import { useState } from "react";
-import { Button } from "./ui/button";
-import { cn } from "@/lib/utils";
 
 const publications = [
   {
@@ -292,7 +292,7 @@ export default function Container() {
                     {authors.map((author, index) => (
                       <p
                         className={cn(
-                          "inline text-foreground/50",
+                          "italic inline text-foreground/50",
                           author === "Roderik Mogot" ? "text-foreground" : "",
                         )}
                         key={index}
