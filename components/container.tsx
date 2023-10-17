@@ -277,7 +277,7 @@ export default function Container() {
                     <CardTitle className="font-semibold text-md md:text-xl dark:text-white">
                       {title}
                     </CardTitle>
-                    <CardDescription className="line-clamp-2 md:line-clamp-none">
+                    <CardDescription className="text-sm md:text-md line-clamp-2 md:line-clamp-none text-foreground/50">
                       {abstract}
                     </CardDescription>
                     <div className="py-1.5 md:py-2.5 px-0 space-x-1.5">
@@ -292,8 +292,10 @@ export default function Container() {
                     {authors.map((author, index) => (
                       <p
                         className={cn(
-                          "italic inline text-foreground/50",
-                          author === "Roderik Mogot" ? "text-foreground" : "",
+                          "text-sm md:text-md italic inline text-foreground/50",
+                          author === "Roderik Mogot"
+                            ? "text-foreground font-bold"
+                            : "",
                         )}
                         key={index}
                       >
