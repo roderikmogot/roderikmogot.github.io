@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="container relative p-8">
       <div className="flex flex-col md:flex-row items-start gap-4 w-full">
-        <PageHeader className="w-full md:w-[25%]">
+        <PageHeader className="w-full md:w-[25%] sticky top-4">
           <LeftSidebar />
         </PageHeader>
         <PageHeader className="bg-transparent bg-opacity-20 backdrop-blur-lg backdrop-filter rounded-lg shadow-2xl w-full md:w-[75%]">
