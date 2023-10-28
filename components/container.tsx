@@ -17,7 +17,6 @@ import Salabite from "../public/salabite.png";
 import Salamoal from "../public/salamoal.jpeg";
 import Serviso from "../public/serviso.jpg";
 import Sukaido from "../public/sukaido.png";
-import { Button } from "./ui/button";
 import {
   Card,
   CardContent,
@@ -31,22 +30,14 @@ const publications = [
     title:
       "A Recognizing Technique Specific Disease on a Chest X-Ray with Support for Image Clarity and Deep Learning",
     authors: ["Roderik Mogot", "Verdiant Jonathan Kusuma"],
-    abstract:
-      "This study was to predict 14 demonstrative signs in 3 conspicuous public chest X-ray datasets: MIMIC-CXR, Chest-Xray8, CheXpert, as well as a multi-site conglomeration of each of these data sets.The multi-source data set is compared with the smallest inconsistency, recommending one method to reduce the slope. In this research experiment using 5 CNN models, where for pre-processing using the CLAHE and SuCK methods, which help make the image look clearer and more contrasting. Based on experiments on the chest thorax there are 3 datasets, namely 1000, 5000 and 10000 datasets, as well as 2 pre-processing methods, namely CLAHE and SuCK. After the experiment, the CNN model which has the highest accuracy was used using 1000 datasets with CLAHE namely the DenseNet 121 model at 95%, and SUCK at 100%, for the total 5000 data sets the highest accuracy was using CLAHE, namely the Resnet 50V2 model at 83% and with SuCK, namely DenseNet 121 by 86%. For the number of 10000 datasets, the highest accuracy with CLAHE is the Inception V3 model of 63%, while the SUCK model of ResNet 50V2 is 87%. With several experiments, it is proven that the SuCK method produces better accuracy than CLAHE. This research can be continued with the use of test images for a more diverse chest thorax.",
     year: 2023,
-    citation:
-      "Rangkuti, A. H. ., Mogot, R. Y. ., & Kusuma, V. J. . (2023). A Recognizing Technique Specific Disease on a Chest X-Ray with Support for Image Clarity and Deep Learning . International Journal of Intelligent Systems and Applications in Engineering, 11(3), 176 –. Retrieved from https://www.ijisae.org/index.php/IJISAE/article/view/3157",
     tools: ["Python", "TensorFlow", "Matplotlib", "Numpy", "Pandas"],
   },
   {
     title:
       "Wick System Automation Method on Maintenance  Hydroponic Plant based Arduino",
     authors: ["Yovanka Davincy Setiawan", "Bryan Ghilchrist", "Roderik Mogot"],
-    abstract:
-      "Agriculture is a science and practice in the world of agriculture, including cultivation to grow plants which aim to  produce  other  food  ingredients  needed for  human  life. Where in the agricultural sector, which is precisely discussing about agriculture, there has been a development in the way of farming using the hydroponic method. Hydroponics is a new trend in recent years which is engaged in agriculture which has a different planting medium in the form of flowing water which is  generally given  a mixture  of fertilizers or  certain nutrients  for  plants  to  develop  or  grow  well.  Currently, technology has developed very rapidly and is applied to every aspect of human life, one of which is the agricultural sector which  applies  this  hydroponic  system  or  method.  The application  of  this  technology  can  be  in  the  form  of  a Hydroponic  Plant Maintenance Management  System using an  Arduino  microcontroller.  The  application  of  this technology is expected to reduce the failure rate and perform performance  efficiency  in  carrying  out  hydroponic-based plant  maintenance  where  this  system  will  take  several parameters obtained from each sensor which will make orders to carry out hydroponic-based plant maintenance.",
     year: 2022,
-    citation:
-      "Setiawan, Yovanka & Ghilchrist, Bryan & Mogot, Roderik. (2022). Wick System Automation Method on Maintenance Hydroponic Plant based Arduino.",
     tools: ["C", "Arduino"],
   },
 ];
@@ -267,54 +258,42 @@ export default function Container() {
             PUBLICATIONS
           </p>
           <div className="mt-1 relative space-y-4">
-            {publications.map(
-              ({ title, authors, abstract, year, citation, tools }) => (
-                <Card
-                  key={title}
-                  className="border-black dark:border-white bg-transparent rounded-md text-black transform duration-150 shadow-md hover:shadow-gray-500 cursor-pointer"
-                >
-                  <CardHeader>
-                    <CardTitle className="font-semibold text-md md:text-xl dark:text-white">
-                      {title}
-                    </CardTitle>
-                    <CardDescription className="text-sm md:text-md line-clamp-2 md:line-clamp-none text-foreground/50">
-                      {abstract}
-                    </CardDescription>
-                    <div className="py-1.5 md:py-2.5 px-0 space-x-1.5">
-                      {tools.map((tool, index) => (
-                        <Badge key={index} variant="default">
-                          {tool}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    {authors.map((author, index) => (
-                      <p
-                        className={cn(
-                          "text-sm md:text-md italic inline text-foreground/50",
-                          author === "Roderik Mogot"
-                            ? "text-foreground font-bold"
-                            : "",
-                        )}
-                        key={index}
-                      >
-                        {author}
-                        {index < authors.length - 1 ? <span>, </span> : null}
-                      </p>
+            {publications.map(({ title, authors, year, tools }) => (
+              <Card
+                key={title}
+                className="border-black dark:border-white bg-transparent rounded-md text-black transform duration-150 shadow-md hover:shadow-gray-500 cursor-pointer"
+              >
+                <CardHeader>
+                  <CardTitle className="font-semibold text-md md:text-xl dark:text-white">
+                    {title}
+                  </CardTitle>
+                  <div className="py-1.5 md:py-2.5 px-0 space-x-1.5">
+                    {tools.map((tool, index) => (
+                      <Badge key={index} variant="default">
+                        {tool}
+                      </Badge>
                     ))}
-                    <p className="text-foreground/50 text-sm">{year}</p>
-                    <Button
-                      variant="default"
-                      className="px-4 py-0 mt-2 w-full md:w-fit"
-                      onClick={() => navigator.clipboard.writeText(citation)}
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  {authors.map((author, index) => (
+                    <p
+                      className={cn(
+                        "text-sm md:text-md italic inline text-foreground/50",
+                        author === "Roderik Mogot"
+                          ? "text-foreground font-bold"
+                          : "",
+                      )}
+                      key={index}
                     >
-                      Cite
-                    </Button>
-                  </CardContent>
-                </Card>
-              ),
-            )}
+                      {author}
+                      {index < authors.length - 1 ? <span>, </span> : null}
+                    </p>
+                  ))}
+                  <p className="text-foreground/50 text-sm">{year}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>
