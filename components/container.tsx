@@ -257,7 +257,7 @@ export default function Container() {
           <p className="uppercase italic font-black text-md text-foreground/50 opacity-60 md:tracking-tight">
             PUBLICATIONS
           </p>
-          <div className="mt-1 relative space-y-4">
+          <div className="mt-1 relative grid grid-cols-1 md:grid-cols-2 gap-4">
             {publications.map(({ title, authors, year, tools }) => (
               <Card
                 key={title}
