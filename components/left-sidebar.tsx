@@ -40,10 +40,10 @@ export default function LeftSidebar() {
             className="w-24 h-24 object-cover rounded-full"
           />
         </div>
-        <p className="leading-lg text-black font-bold text-2xl mt-5 text-foreground dark:text-white">
+        <p className="leading-lg text-[max(15px,min(2vw,20px))] text-black font-bold mt-5 text-foreground dark:text-white text-center">
           Roderik Mogot
         </p>
-        <p className="leading-6 text-black/50 dark:text-white/50 text-sm md:text-md">
+        <p className="text-center leading-6 text-black/50 dark:text-white/50 text-sm md:text-md">
           fellow engineer
         </p>
         <Separator className="mb-3 mt-5" />
