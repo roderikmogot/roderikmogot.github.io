@@ -155,16 +155,14 @@ export default function Container() {
           </span>
         </div>
 
-        <div className="mt-2">
-          <p className="text-[max(15px,min(2vw,20px))] leading-tight text-foreground/60">
-            Passionate about the fusion of data science and web development, I
-            bring a unique blend of skills and experiences to the table. With a
-            proven track record in both fields, I have honed my abilities to
-            turn data into insights and create engaging web experiences. Join me
-            on a journey where data meets design, and technology transforms
-            possibilities into realities.
-          </p>
-        </div>
+        <p className="text-[max(15px,min(2vw,20px))] tracking-[-0.04em] text-foreground/60">
+          Passionate about the fusion of data science and web development, I
+          bring a unique blend of skills and experiences to the table. With a
+          proven track record in both fields, I have honed my abilities to turn
+          data into insights and create engaging web experiences. Join me on a
+          journey where data meets design, and technology transforms
+          possibilities into realities.
+        </p>
 
         <div className="mt-7">
           <p className="uppercase italic font-black text-md text-foreground/50 opacity-60 md:tracking-tight">
