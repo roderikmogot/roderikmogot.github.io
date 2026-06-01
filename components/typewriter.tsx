@@ -1,48 +1,49 @@
+"use client";
+
 import { useState, useEffect } from "react";
 
+const words = ["softwares", "experiences", "websites", "products"];
+
 export default function TypeWriter() {
-  const words = ["softwares", "programs", "websites"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [typedText, setTypedText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
-  const [wordChanging, setWordChanging] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
     const currentWord = words[currentWordIndex];
 
-    if (textIndex < currentWord.length) {
-      const typingInterval = setInterval(() => {
-        setTypedText((prevText) => prevText + currentWord[textIndex]);
-        setTextIndex((prevIndex) => prevIndex + 1);
-      }, 100);
-
-      return () => clearInterval(typingInterval);
-    } else if (!wordChanging) {
-      setWordChanging(true);
-      setTimeout(() => {
-        // Shift one letter to the left
-        for (let i = currentWord.length; i >= 0; i--) {
-          setTimeout(
-            () => {
-              setTypedText((prevText) => prevText.slice(0, -1));
-            },
-            (currentWord.length - i) * 100,
-          ); // Adjust shifting speed
-        }
-        setTimeout(() => {
-          setWordChanging(false);
-          setTextIndex(0);
-          setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-        }, currentWord.length * 100); // Delay before clearing
-      }, 1000); // Delay before shifting
+    if (!isDeleting && textIndex < currentWord.length) {
+      const t = setTimeout(() => {
+        setTypedText((prev) => prev + currentWord[textIndex]);
+        setTextIndex((i) => i + 1);
+      }, 90);
+      return () => clearTimeout(t);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentWordIndex, textIndex, words, wordChanging]);
+
+    if (!isDeleting && textIndex === currentWord.length) {
+      const t = setTimeout(() => setIsDeleting(true), 1400);
+      return () => clearTimeout(t);
+    }
+
+    if (isDeleting && typedText.length > 0) {
+      const t = setTimeout(() => {
+        setTypedText((prev) => prev.slice(0, -1));
+      }, 50);
+      return () => clearTimeout(t);
+    }
+
+    if (isDeleting && typedText.length === 0) {
+      setIsDeleting(false);
+      setTextIndex(0);
+      setCurrentWordIndex((i) => (i + 1) % words.length);
+    }
+  }, [currentWordIndex, textIndex, typedText, isDeleting]);
 
   return (
-    <div className="w-full h-full flex justify-center items-center">
+    <span>
       {typedText}
-      <span className="animate-pulse">_</span>
-    </div>
+      <span className="animate-pulse text-violet-400">|</span>
+    </span>
   );
 }

@@ -1,11 +1,13 @@
-import { Josefin_Sans as FontMono, Inter as FontSans } from "next/font/google";
+import { Inter, Syne } from "next/font/google";
 
-export const fontSans = FontSans({
+export const fontSans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
-})
+  display: "swap",
+});
 
-export const fontMono = FontMono({
+export const fontDisplay = Syne({
   subsets: ["latin"],
-  variable: "--font-mono",
-})
+  variable: "--font-display",
+  display: "swap",
+});
