@@ -3,7 +3,7 @@ import { siteConfig } from "@/config/site";
 import type { Metadata } from "next";
 
 import { Analytics } from "@/components/analytics";
-import { fontSans } from "@/lib/fonts";
+import { fontDisplay, fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
@@ -21,10 +21,6 @@ export const metadata: Metadata = {
     },
   ],
   creator: "Roderik Mogot",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -32,21 +28,12 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
   },
   icons: {
     icon: "/favicons/favicon.ico",
     shortcut: "/favicons/favicon-16.png",
     apple: "/favicons/apple-touch-icon.png",
   },
-  manifest: `${siteConfig.url}/site.webmanifest`,
 };
 
 interface RootLayoutProps {
@@ -55,26 +42,25 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <>
-      <html lang="en" suppressHydrationWarning>
-        <head />
-        <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased bg-[url('../public/background-light.svg')] dark:bg-[url('../public/background-dark.svg')]",
-            fontSans.variable,
-          )}
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable,
+          fontDisplay.variable,
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
         >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div className="relative flex flex-col">{children}</div>
-          </ThemeProvider>
-          <Analytics />
-        </body>
-      </html>
-    </>
+          {children}
+        </ThemeProvider>
+        <Analytics />
+      </body>
+    </html>
   );
 }
