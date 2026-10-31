@@ -1,13 +1,13 @@
-import { Inter, Syne } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 
 export const fontSans = Inter({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-sans-var",
   display: "swap",
 });
 
-export const fontDisplay = Syne({
+export const fontMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-display",
+  variable: "--font-mono-var",
   display: "swap",
 });
