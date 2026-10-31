@@ -51,22 +51,13 @@ export const roles: Role[] = [
     tools: ["Microfrontend", "Microservices", "CI/CD", "SQL", "React.js", "Node.js"],
   },
   {
-    // TODO(roderikmogot): set the real BCA end date.
     title: "Application Developer",
     company: "PT Bank Central Asia Tbk.",
-    date: "Oct 2023 – TODO",
+    date: "Oct 2023 – Present",
     start: 2023,
     description:
       "Full-time application developer building and scaling micro-frontend and microservices solutions in a large-scale banking environment. Driving feature development, code quality, and cross-team collaboration.",
     tools: ["Microfrontend", "Microservices", "CI/CD", "SQL", "React.js", "Node.js"],
-  },
-  {
-    // TODO(roderikmogot): add start date, description and tools for Shad.
-    title: "Frontend Engineer",
-    company: "Shad",
-    date: "Present",
-    description: "Frontend Engineer at Shad.",
-    tools: [],
   },
 ];
 

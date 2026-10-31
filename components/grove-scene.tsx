@@ -15,7 +15,7 @@ const c = {
   paper: "#f5eddf",
 };
 
-/** One tree per Role, oldest at the back-left; the current Role is a sapling up front. */
+/** One tree per Role, oldest on the left; the current Role is a sapling up front. */
 export default function GroveScene({ roles, still }: { roles: number; still: boolean }) {
   const grown = roles - 1;
   return (
@@ -25,6 +25,7 @@ export default function GroveScene({ roles, still }: { roles: number; still: boo
       frameloop={still ? "demand" : "always"}
       camera={{ position: [0, 3.2, 7.5], fov: 38 }}
       gl={{ alpha: true, antialias: true }}
+      onCreated={({ camera }) => camera.lookAt(0, 1, 0)}
     >
       <ambientLight intensity={1.1} color={c.paper} />
       <directionalLight position={[4, 6, 3]} intensity={1.6} color="#fff1dc" />
@@ -60,7 +61,9 @@ export default function GroveScene({ roles, still }: { roles: number; still: boo
         <meshStandardMaterial color={c.stone} flatShading />
       </mesh>
 
-      {!still && Array.from({ length: 10 }, (_, i) => <Firefly key={i} seed={i} />)}
+      {Array.from({ length: 10 }, (_, i) => (
+        <Firefly key={i} seed={i} still={still} />
+      ))}
     </Canvas>
   );
 }
@@ -117,17 +120,21 @@ function Mushroom({ position, scale = 1 }: { position: [number, number, number];
   );
 }
 
-function Firefly({ seed }: { seed: number }) {
+function Firefly({ seed, still }: { seed: number; still: boolean }) {
   const ref = useRef<Mesh>(null);
   const x = Math.sin(seed * 12.9) * 2.6;
   const z = Math.cos(seed * 7.3) * 1.8;
+  const at = (t: number): [number, number, number] => [
+    x + Math.sin(t) * 0.3,
+    0.8 + Math.sin(t * 1.3) * 0.5 + (seed % 3) * 0.4,
+    z + Math.cos(t) * 0.3,
+  ];
   useFrame(({ clock }) => {
-    if (!ref.current) return;
-    const t = clock.elapsedTime * 0.5 + seed;
-    ref.current.position.set(x + Math.sin(t) * 0.3, 0.8 + Math.sin(t * 1.3) * 0.5 + (seed % 3) * 0.4, z + Math.cos(t) * 0.3);
+    if (still || !ref.current) return;
+    ref.current.position.set(...at(clock.elapsedTime * 0.5 + seed));
   });
   return (
-    <mesh ref={ref}>
+    <mesh ref={ref} position={at(seed)}>
       <sphereGeometry args={[0.035, 6, 6]} />
       <meshBasicMaterial color="#f3e7b0" />
     </mesh>
