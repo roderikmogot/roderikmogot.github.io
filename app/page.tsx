@@ -1,3 +1,4 @@
+import Image from "next/image";
 import LineMap, { type Stop } from "@/components/line-map";
 import RideScene from "@/components/ride-scene";
 import { kindLabels, projects, publications, roles, stationFor, type Publication, type Role } from "@/config/content";
@@ -48,7 +49,11 @@ export default function Home() {
           <ul className="mt-4 grid gap-4 sm:grid-cols-2">
             {projects.map((p) => (
               <li key={p.id} className="card overflow-hidden">
-                {p.image && <img src={p.image} alt="" loading="lazy" className="aspect-video w-full object-cover" />}
+                {p.image && (
+                  <div className="relative aspect-video">
+                    <Image src={p.image} alt="" fill sizes="(min-width: 640px) 280px, 100vw" className="object-cover" />
+                  </div>
+                )}
                 <div className="p-4">
                   <p className={`label ${kindColor[p.kind]}`}>
                     {kindLabels[p.kind]} · {p.subtitle}
