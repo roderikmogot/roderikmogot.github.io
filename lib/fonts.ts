@@ -1,13 +1,13 @@
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Instrument_Sans, Source_Serif_4 } from "next/font/google";
 
-export const fontSans = Inter({
+export const fontDisplay = Source_Serif_4({
   subsets: ["latin"],
-  variable: "--font-sans-var",
+  variable: "--font-display-var",
   display: "swap",
 });
 
-export const fontMono = JetBrains_Mono({
+export const fontReading = Instrument_Sans({
   subsets: ["latin"],
-  variable: "--font-mono-var",
+  variable: "--font-reading-var",
   display: "swap",
 });
