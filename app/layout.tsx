@@ -1,7 +1,7 @@
 import { siteConfig } from "@/config/site";
 import type { Metadata } from "next";
 
-import { fontMono, fontSans } from "@/lib/fonts";
+import { fontDisplay, fontReading } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
@@ -40,17 +40,9 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn(fontDisplay.variable, fontReading.variable)}>
       <head />
-      <body
-        className={cn(
-          "min-h-screen font-sans antialiased",
-          fontSans.variable,
-          fontMono.variable,
-        )}
-      >
-        {children}
-      </body>
+      <body className="min-h-screen font-sans antialiased">{children}</body>
     </html>
   );
 }

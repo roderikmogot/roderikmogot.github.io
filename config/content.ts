@@ -1,10 +1,8 @@
 export interface Role {
-  /** Short Station name for the route map. */
-  stop: string;
   title: string;
   company: string;
   date: string;
-  /** Year the Role started, used to place Signposts between Stations. */
+  /** Year the Role started. */
   start?: number;
   description: string;
   tools: string[];
@@ -32,10 +30,9 @@ export interface Publication {
   tools: string[];
 }
 
-// Oldest first: this is the Station order.
+// Oldest first.
 export const roles: Role[] = [
   {
-    stop: "BOC",
     title: "Frontend Web Developer Intern",
     company: "BOC Indonesia",
     date: "Feb 2018 – May 2018",
@@ -45,7 +42,6 @@ export const roles: Role[] = [
     tools: ["WordPress"],
   },
   {
-    stop: "BCA intern",
     title: "Application Developer Intern",
     company: "PT Bank Central Asia Tbk.",
     date: "Sep 2022 – Sep 2023",
@@ -56,7 +52,6 @@ export const roles: Role[] = [
   },
   {
     // TODO(roderikmogot): set the real BCA end date.
-    stop: "BCA",
     title: "Application Developer",
     company: "PT Bank Central Asia Tbk.",
     date: "Oct 2023 – TODO",
@@ -67,7 +62,6 @@ export const roles: Role[] = [
   },
   {
     // TODO(roderikmogot): add start date, description and tools for Shad.
-    stop: "Shad",
     title: "Frontend Engineer",
     company: "Shad",
     date: "Present",
@@ -75,11 +69,6 @@ export const roles: Role[] = [
     tools: [],
   },
 ];
-
-/** Index of the Station a Publication's Signpost follows: the last Role started in or before its year. */
-export function stationFor(p: Publication): number {
-  return roles.findLastIndex((r) => r.start !== undefined && r.start <= p.year);
-}
 
 export const kindLabels: Record<ProjectKind, string> = {
   client: "Client",

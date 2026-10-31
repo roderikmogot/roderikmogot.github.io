@@ -11,7 +11,7 @@
     "format:write": "prettier --write \"**/*.{ts,tsx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx}\" --cache",
     "prepare": "husky",
-    "check": "node config/content.check.mts && eslint . --max-warnings 0"
+    "check": "eslint . --max-warnings 0"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.0",
