@@ -14,12 +14,14 @@
     "check": "eslint . --max-warnings 0"
   },
   "dependencies": {
+    "@react-three/fiber": "^9.8.2",
     "@tailwindcss/postcss": "^4.3.0",
     "clsx": "^2.1.1",
     "next": "^16.4.3",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "tailwind-merge": "^2.6.0"
+    "tailwind-merge": "^2.6.0",
+    "three": "^0.187.0"
   },
   "packageManager": "pnpm@10.20.0",
   "engines": {
@@ -31,6 +33,7 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/three": "^0.187.0",
     "autoprefixer": "latest",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.4.3",

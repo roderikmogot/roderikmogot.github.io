@@ -1,6 +1,7 @@
 import Image from "next/image";
 import SiteNav, { type Section } from "@/components/site-nav";
-import { ClosingShapes, HeroShapes, PebbleShape } from "@/components/shapes";
+import Grove from "@/components/grove";
+import { ClosingShapes, PebbleShape } from "@/components/shapes";
 import { kindLabels, projects, publications, roles } from "@/config/content";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -56,7 +57,7 @@ export default function Home() {
               </div>
             </div>
             <div className="mx-auto w-full max-w-md md:-mb-24">
-              <HeroShapes />
+              <Grove roles={roles.length} />
             </div>
           </div>
 

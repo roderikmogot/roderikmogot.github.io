@@ -7,3 +7,5 @@
 **Publication**: A peer-reviewed paper.
 
 **Tool**: A technology used in a Role, Project or Publication.
+
+**Grove**: The 3D forest in the hero. One tree per Role, taller with each one; the current Role is the sapling in front.
