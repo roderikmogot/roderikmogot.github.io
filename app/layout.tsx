@@ -1,7 +1,6 @@
 import { siteConfig } from "@/config/site";
 import type { Metadata } from "next";
 
-import { Analytics } from "@/components/analytics";
 import { fontMono, fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import "./globals.css";
@@ -51,7 +50,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         {children}
-        <Analytics />
       </body>
     </html>
   );

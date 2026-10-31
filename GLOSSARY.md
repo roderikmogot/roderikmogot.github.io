@@ -1,19 +1,19 @@
 # Glossary
 
-**City**: The whole portfolio, shown as one map of Districts.
-
-**District**: A group of Buildings that share a kind of work. There are five: Career, Client, Lab, Design and Research. Each has one colour.
-
-**Building**: One piece of work inside a District. A Project, a Publication or an employer.
-
-**Project**: Something built for a client (Client), for practice (Lab) or as a design only (Design).
-
-**Publication**: A peer-reviewed paper. Lives in the Research District.
+**Ride**: The whole portfolio, told as one slow train trip from the first Role to the Terminus.
 
 **Role**: One position held at one employer over one period. An employer can have several Roles.
 
-**Pipeline**: The Roles in date order, oldest first. The newest Role is the one "running".
+**Station**: The stop for one Role on the Ride. Stations come in date order, oldest first. The newest Station is where the train is now.
 
-**Tool**: A technology used in a Building. A Building's size is its Tool count.
+**Signpost**: A Publication passed between Stations, placed by its year.
 
-**Feed**: The rotating stream of recent news about Roles, Projects and Publications.
+**Workshop**: The stretch after the last Station where the Projects live.
+
+**Terminus**: The end of the line. Who Roderik is and where to reach out.
+
+**Project**: Something built for a client (Client), for practice (Lab) or as a design only (Design). Projects have no dates.
+
+**Publication**: A peer-reviewed paper.
+
+**Tool**: A technology used in a Role, Project or Publication.

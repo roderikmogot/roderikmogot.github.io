@@ -1,17 +1,20 @@
-export type DistrictId = "career" | "client" | "lab" | "design" | "research";
-
-export interface District {
-  id: DistrictId;
-  name: string;
-  color: string;
-  /** World-space corner (x, z) of the district platform. */
-  origin: [number, number];
-  cols: number;
+export interface Role {
+  /** Short Station name for the route map. */
+  stop: string;
+  title: string;
+  company: string;
+  date: string;
+  /** Year the Role started, used to place Signposts between Stations. */
+  start?: number;
+  description: string;
+  tools: string[];
 }
 
-export interface Building {
+export type ProjectKind = "client" | "lab" | "design";
+
+export interface Project {
   id: string;
-  district: DistrictId;
+  kind: ProjectKind;
   title: string;
   subtitle: string;
   description: string;
@@ -20,51 +23,51 @@ export interface Building {
   image?: string;
 }
 
-export interface Role {
+export interface Publication {
+  id: string;
   title: string;
-  company: string;
-  date: string;
+  year: number;
+  authors: string;
   description: string;
   tools: string[];
 }
 
-export const districts: District[] = [
-  { id: "career", name: "Career", color: "#34d399", origin: [-30, -22], cols: 2 },
-  { id: "client", name: "Client", color: "#22d3ee", origin: [-8, -22], cols: 2 },
-  { id: "research", name: "Research", color: "#a78bfa", origin: [14, -22], cols: 2 },
-  { id: "lab", name: "Lab", color: "#f472b6", origin: [-8, -2], cols: 2 },
-  { id: "design", name: "Design", color: "#fbbf24", origin: [14, -2], cols: 1 },
-];
-
-// Oldest first: this is the Pipeline order.
+// Oldest first: this is the Station order.
 export const roles: Role[] = [
   {
+    stop: "BOC",
     title: "Frontend Web Developer Intern",
     company: "BOC Indonesia",
     date: "Feb 2018 – May 2018",
+    start: 2018,
     description:
       "Built and customized WordPress-based websites for clients, focusing on responsive design and performance optimization.",
     tools: ["WordPress"],
   },
   {
+    stop: "BCA intern",
     title: "Application Developer Intern",
     company: "PT Bank Central Asia Tbk.",
     date: "Sep 2022 – Sep 2023",
+    start: 2022,
     description:
       "Developed and maintained micro-frontend and microservices applications within a large-scale banking environment. Contributed to CI/CD pipelines and collaborated across cross-functional teams.",
     tools: ["Microfrontend", "Microservices", "CI/CD", "SQL", "React.js", "Node.js"],
   },
   {
     // TODO(roderikmogot): set the real BCA end date.
+    stop: "BCA",
     title: "Application Developer",
     company: "PT Bank Central Asia Tbk.",
     date: "Oct 2023 – TODO",
+    start: 2023,
     description:
       "Full-time application developer building and scaling micro-frontend and microservices solutions in a large-scale banking environment. Driving feature development, code quality, and cross-team collaboration.",
     tools: ["Microfrontend", "Microservices", "CI/CD", "SQL", "React.js", "Node.js"],
   },
   {
     // TODO(roderikmogot): add start date, description and tools for Shad.
+    stop: "Shad",
     title: "Frontend Engineer",
     company: "Shad",
     date: "Present",
@@ -73,25 +76,21 @@ export const roles: Role[] = [
   },
 ];
 
-const careerBuildings: Building[] = [...new Set(roles.map((r) => r.company))]
-  .reverse()
-  .map((company) => {
-    const own = roles.filter((r) => r.company === company);
-    return {
-      id: company.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
-      district: "career",
-      title: company,
-      subtitle: own.map((r) => r.title).join(" · "),
-      description: own[own.length - 1].description,
-      tools: [...new Set(own.flatMap((r) => r.tools))],
-    };
-  });
+/** Index of the Station a Publication's Signpost follows: the last Role started in or before its year. */
+export function stationFor(p: Publication): number {
+  return roles.findLastIndex((r) => r.start !== undefined && r.start <= p.year);
+}
 
-export const buildings: Building[] = [
-  ...careerBuildings,
+export const kindLabels: Record<ProjectKind, string> = {
+  client: "Client",
+  lab: "Lab",
+  design: "Design",
+};
+
+export const projects: Project[] = [
   {
     id: "kurniawan-gadget",
-    district: "client",
+    kind: "client",
     title: "Kurniawan Gadget",
     subtitle: "E-commerce",
     tools: ["React.js", "Tailwind CSS", "Firebase", "Vercel"],
@@ -100,7 +99,7 @@ export const buildings: Building[] = [
   },
   {
     id: "desa-pecatu",
-    district: "client",
+    kind: "client",
     title: "Desa Pecatu",
     subtitle: "Government information system",
     image: "/desa_pecatu.jpeg",
@@ -110,7 +109,7 @@ export const buildings: Building[] = [
   },
   {
     id: "sukaido",
-    district: "client",
+    kind: "client",
     title: "Sukaido",
     subtitle: "Point of sale",
     image: "/sukaido.png",
@@ -119,7 +118,7 @@ export const buildings: Building[] = [
   },
   {
     id: "qiurio",
-    district: "client",
+    kind: "client",
     title: "Qiurio Visuals",
     subtitle: "Agency landing page",
     image: "/qiurio.png",
@@ -129,7 +128,7 @@ export const buildings: Building[] = [
   },
   {
     id: "lastfm",
-    district: "lab",
+    kind: "lab",
     title: "LastFM",
     subtitle: "Music dashboard",
     image: "/last-fm.png",
@@ -139,7 +138,7 @@ export const buildings: Building[] = [
   },
   {
     id: "salabite",
-    district: "lab",
+    kind: "lab",
     title: "Salabite",
     subtitle: "COVID-19 tracker",
     image: "/salabite.png",
@@ -149,7 +148,7 @@ export const buildings: Building[] = [
   },
   {
     id: "salamoal",
-    district: "lab",
+    kind: "lab",
     title: "Salamoal",
     subtitle: "Web design experiment",
     image: "/salamoal.jpeg",
@@ -159,7 +158,7 @@ export const buildings: Building[] = [
   },
   {
     id: "pandame",
-    district: "lab",
+    kind: "lab",
     title: "PandaMe",
     subtitle: "Web design",
     image: "/pandame.png",
@@ -169,7 +168,7 @@ export const buildings: Building[] = [
   },
   {
     id: "jageo",
-    district: "lab",
+    kind: "lab",
     title: "Jageo",
     subtitle: "Web design",
     image: "/jageo.png",
@@ -179,7 +178,7 @@ export const buildings: Building[] = [
   },
   {
     id: "serviso",
-    district: "design",
+    kind: "design",
     title: "serviso.id",
     subtitle: "UI/UX design",
     image: "/serviso.jpg",
@@ -187,31 +186,25 @@ export const buildings: Building[] = [
     url: "https://www.figma.com/file/c5BMDi69moHsMpJG1EtWue/serviso.id",
     description: "UI/UX design for an online electronics repair service.",
   },
+];
+
+// Oldest first.
+export const publications: Publication[] = [
+  {
+    id: "hydroponic",
+    title: "Hydroponic Wick System",
+    year: 2022,
+    authors: "Yovanka Davincy Setiawan, Bryan Ghilchrist, Roderik Mogot",
+    tools: ["C", "Arduino"],
+    description: "Wick System Automation Method on Maintenance Hydroponic Plant based Arduino.",
+  },
   {
     id: "chest-xray",
-    district: "research",
     title: "Chest X-Ray Recognition",
-    subtitle: "2023 · Roderik Mogot, Verdiant Jonathan Kusuma",
+    year: 2023,
+    authors: "Roderik Mogot, Verdiant Jonathan Kusuma",
     tools: ["Python", "TensorFlow", "Matplotlib", "Numpy", "Pandas"],
     description:
       "A Recognizing Technique Specific Disease on a Chest X-Ray with Support for Image Clarity and Deep Learning.",
   },
-  {
-    id: "hydroponic",
-    district: "research",
-    title: "Hydroponic Wick System",
-    subtitle: "2022 · Yovanka Davincy Setiawan, Bryan Ghilchrist, Roderik Mogot",
-    tools: ["C", "Arduino"],
-    description:
-      "Wick System Automation Method on Maintenance Hydroponic Plant based Arduino.",
-  },
-];
-
-export const feed: string[] = [
-  "Shad · Frontend Engineer is running",
-  "Kurniawan Gadget is live at kurniawangadget.com",
-  "Chest X-Ray Recognition published, 2023",
-  "BCA · Application Developer shipped micro-frontends",
-  "LastFM dashboard deployed on Vercel",
-  "Desa Pecatu information system is live",
 ];
