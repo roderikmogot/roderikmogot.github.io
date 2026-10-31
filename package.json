@@ -6,11 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format:write": "prettier --write \"**/*.{ts,tsx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx}\" --cache",
-    "prepare": "husky install"
+    "prepare": "husky",
+    "check": "node config/content.check.mts && eslint . --max-warnings 0"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.0",
@@ -31,8 +32,8 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
-    "eslint": "latest",
-    "eslint-config-next": "latest",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.3",
     "husky": "^9.1.7",
     "postcss": "latest",
     "tailwindcss": "latest",
