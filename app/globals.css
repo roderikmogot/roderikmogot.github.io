@@ -67,6 +67,10 @@ body {
 .btn-solid:hover {
   background: var(--color-moss-deep);
 }
+/* Light label text would make a currentColor ring vanish on sand. */
+.btn-solid:focus-visible {
+  outline-color: var(--color-moss);
+}
 .btn-outline {
   border: 1px solid var(--color-ink);
 }

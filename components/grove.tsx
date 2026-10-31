@@ -11,10 +11,12 @@ export default function Grove({ roles }: { roles: number }) {
   const [mode, setMode] = useState<"svg" | "live" | "still">("svg");
 
   useEffect(() => {
-    const webgl = !!document.createElement("canvas").getContext("webgl2");
-    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- browser-only checks
-    if (webgl) setMode(reduce ? "still" : "live");
+    if (!document.createElement("canvas").getContext("webgl2")) return;
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)");
+    const sync = () => setMode(reduce.matches ? "still" : "live");
+    sync();
+    reduce.addEventListener("change", sync);
+    return () => reduce.removeEventListener("change", sync);
   }, []);
 
   if (mode === "svg") return <HeroShapes />;

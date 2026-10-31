@@ -13,22 +13,18 @@ export default function SiteNav({ name, sections }: { name: string; sections: Se
   const [active, setActive] = useState<string>();
 
   useEffect(() => {
-    const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
-      { rootMargin: "-50% 0px -50% 0px" },
-    );
-    for (const id of ["top", ...sections.map((s) => s.id)]) {
-      const el = document.getElementById(id);
-      if (el) io.observe(el);
-    }
-    // The last section is too short to reach mid-screen; mark it once the page bottoms out.
+    // Last section whose top has passed mid-screen; the short last section wins once the page bottoms out.
     const onScroll = () => {
-      if (innerHeight + scrollY >= document.documentElement.scrollHeight - 2) setActive(sections.at(-1)?.id);
+      const bottom = innerHeight + scrollY >= document.documentElement.scrollHeight - 2;
+      const passed = sections.filter((s) => (document.getElementById(s.id)?.getBoundingClientRect().top ?? Infinity) <= innerHeight / 2);
+      setActive(bottom ? sections.at(-1)?.id : passed.at(-1)?.id);
     };
+    onScroll();
     addEventListener("scroll", onScroll, { passive: true });
+    addEventListener("resize", onScroll);
     return () => {
-      io.disconnect();
       removeEventListener("scroll", onScroll);
+      removeEventListener("resize", onScroll);
     };
   }, [sections]);
 
