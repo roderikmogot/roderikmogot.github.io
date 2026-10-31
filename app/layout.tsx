@@ -1,9 +1,8 @@
-import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site";
 import type { Metadata } from "next";
 
 import { Analytics } from "@/components/analytics";
-import { fontDisplay, fontSans } from "@/lib/fonts";
+import { fontMono, fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
@@ -42,23 +41,16 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head />
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen font-sans antialiased",
           fontSans.variable,
-          fontDisplay.variable,
+          fontMono.variable,
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        {children}
         <Analytics />
       </body>
     </html>

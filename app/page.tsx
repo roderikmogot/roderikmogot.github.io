@@ -1,42 +1,109 @@
 "use client";
 
-import DarkModeButton from "@/components/dark-mode";
-import ExperienceSection from "@/components/sections/experience";
-import HeroSection from "@/components/sections/hero";
-import ProjectsSection from "@/components/sections/projects";
-import PublicationsSection from "@/components/sections/publications";
-import Navbar from "@/components/navbar";
+import dynamic from "next/dynamic";
+import { useCallback, useEffect, useState } from "react";
+import Boot from "@/components/boot";
+import type { CameraCmd, Phase } from "@/components/city-scene";
+import Fallback from "@/components/fallback";
+import Feed from "@/components/feed";
+import { ContactPanel, Controls, DetailPanel, HintBar, StatCards, TopBar, type Tab } from "@/components/hud";
+import Pipeline from "@/components/pipeline";
+import { buildings } from "@/config/content";
+import { areaOf, lots } from "@/lib/city-data";
+
+const CityScene = dynamic(() => import("@/components/city-scene"), { ssr: false });
+
+type Mode = "pending" | "3d" | "list";
+
+function pickMode(): Mode {
+  const gl = document.createElement("canvas").getContext("webgl2");
+  const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  return gl && !calm && window.innerWidth >= 768 ? "3d" : "list";
+}
 
 export default function Home() {
+  const [mode, setMode] = useState<Mode>("pending");
+  const [phase, setPhase] = useState<Phase>("boot");
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [command, setCommand] = useState<{ cmd: CameraCmd; n: number } | null>(null);
+  const send = (cmd: CameraCmd) => setCommand((c) => ({ cmd, n: (c?.n ?? 0) + 1 }));
+
+  useEffect(() => setMode(pickMode()), []);
+
+  const select = (id: string | null) => {
+    setSelectedId(id);
+    const lot = lots.find((l) => l.building.id === id);
+    if (lot) send({ kind: "focus", x: lot.pos[0] + 4, z: lot.pos[1], span: 48 });
+  };
+  const focusTab = (t: Tab) => {
+    setSelectedId(null);
+    const a = areaOf(t.districts);
+    send({ kind: "focus", x: a.x, z: a.z, span: a.span * 1.6 + 20 });
+  };
+  const reset = () => {
+    setSelectedId(null);
+    send({ kind: "reset" });
+  };
+
+  const startIntro = useCallback(() => setPhase((p) => (p === "boot" ? "intro" : p)), []);
+  const introDone = useCallback(() => setPhase("ready"), []);
+
+  useEffect(() => {
+    if (mode !== "3d") return;
+    const onKey = (e: KeyboardEvent) => {
+      if (phase !== "ready") return setPhase("ready");
+      if (e.target instanceof HTMLInputElement) return;
+      if (e.key === "r" || e.key === "R") reset();
+      if (e.key === "Escape") setSelectedId(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  });
+
+  const selected = buildings.find((b) => b.id === selectedId);
+
   return (
-    <main className="relative min-h-screen bg-background noise">
-      {/* Background grid */}
-      <div className="fixed inset-0 grid-pattern opacity-40 pointer-events-none" />
+    <main className="relative min-h-screen" data-ready={phase === "ready" || mode === "list"}>
+      <Fallback visible={mode === "list"} />
 
-      {/* Ambient blobs */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="animate-blob animation-delay-0 absolute -top-32 -left-32 w-96 h-96 rounded-full bg-violet-500/10 blur-3xl" />
-        <div className="animate-blob animation-delay-2000 absolute top-1/2 -right-32 w-80 h-80 rounded-full bg-indigo-500/10 blur-3xl" />
-        <div className="animate-blob animation-delay-4000 absolute bottom-0 left-1/3 w-72 h-72 rounded-full bg-pink-500/8 blur-3xl" />
-      </div>
-
-      <Navbar />
-
-      <div className="relative z-10">
-        <HeroSection />
-        <ExperienceSection />
-        <ProjectsSection />
-        <PublicationsSection />
-
-        <footer className="py-12 border-t border-border">
-          <div className="container max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-muted-foreground">
-              © 2025 Roderik Mogot
-            </p>
-            <DarkModeButton />
+      {mode === "3d" && (
+        <>
+          <div className="fixed inset-0" onPointerDown={() => phase !== "ready" && setPhase("ready")}>
+            <CityScene
+              phase={phase}
+              selectedId={selectedId}
+              onSelect={select}
+              onIntroDone={introDone}
+              command={command}
+            />
           </div>
-        </footer>
-      </div>
+
+          <div className="pointer-events-none fixed inset-0 z-20 flex flex-col gap-2 p-3 [&>*]:pointer-events-auto">
+            <TopBar onTab={focusTab} onContact={() => setSelectedId("contact")} />
+            <StatCards />
+            <div>
+              <HintBar />
+            </div>
+          </div>
+
+          <div className="fixed top-[76px] right-3 z-20 flex items-start gap-2">
+            {selected && <DetailPanel building={selected} onClose={() => setSelectedId(null)} />}
+            {selectedId === "contact" && <ContactPanel onClose={() => setSelectedId(null)} />}
+            <div>
+              <Controls onZoom={(factor) => send({ kind: "zoom", factor })} onReset={reset} />
+            </div>
+          </div>
+
+          <div className="fixed bottom-3 left-3 z-20">
+            <Pipeline />
+          </div>
+          <div className="fixed right-3 bottom-3 z-20">
+            <Feed />
+          </div>
+
+          <Boot visible={phase === "boot"} onDone={startIntro} />
+        </>
+      )}
     </main>
   );
 }
